@@ -1,0 +1,143 @@
+$font-decorative: 'Pacifico', cursive;
+
+// FONT SIZES
+@mixin h1 {
+  font-size: calculate-rem(20px);
+  font-style: normal;
+  font-weight: 900;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  @include respond(tab) {
+    font-size: calculate-rem(50px);
+    font-style: normal;
+    font-weight: 900;
+    line-height: 66px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin h1-mini {
+  font-size: calculate-rem(20px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  @include respond(tab) {
+    font-family: Exo;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 53px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin h2 {
+  font-size: calculate-rem(20px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  @include respond(tab) {
+    font-family: Exo;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 53px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin h3 {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  @include respond(tab) {
+    font-size: calculate-rem(30px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin h4 {
+  @include respond(tab) {
+    font-family: Exo;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin link-txt {
+  font-size: calculate-rem(18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  @include respond(tab) {
+    font-size: calculate-rem(12px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin body-txt {
+  font-size: calculate-rem(12px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  @include respond(tab) {
+    font-size: calculate-rem(18px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+@mixin body-txt-decor {
+  font-family: $font-decorative;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  @include respond(tab) {
+    font-family: $font-decorative;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}

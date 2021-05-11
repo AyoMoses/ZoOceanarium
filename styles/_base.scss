@@ -2,7 +2,6 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-
 :root {
   font-size: 1rem;
   -webkit-box-sizing: border-box;
@@ -43,7 +42,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'lineto-circular-pro';
+  font-family: 'Roboto Slab', serif;
   font-size: 1rem;
   // line-height: 1.5;
   direction: rtl;
@@ -54,7 +53,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $bg-color;
-  position: relative;
 }
 
 ul,
@@ -66,14 +64,15 @@ li {
 
 a {
   text-decoration: none;
+  font-family: 'Roboto Slab', serif;
 }
 
 p {
-  font-family: 'lineto-circular-pro';
-  // color: $font-color-grey;
+  font-family: 'Roboto Slab', serif;
 }
 
 img {
+  display: block;
   border: none;
   outline: none;
   max-width: 100%;
