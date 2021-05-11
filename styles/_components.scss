@@ -1,0 +1,423 @@
+a {
+  color: $white;
+}
+
+/* header */
+
+.header-wrap {
+  width: 100%;
+  max-width: 100%;
+  background: $bg-color;
+  position: sticky;
+  top: 0;
+  height: 70px;
+  z-index: 99999999;
+
+  .header__inner {
+    width: 100%;
+    max-width: calc(100% - 160px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @include deskTopFirst(1022) {
+      max-width: 100%;
+    }
+  }
+}
+.header {
+  // position: fixed;
+  // z-index: 999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  // margin-top: 64px;
+
+  @include deskTopFirst(1022) {
+    display: inline-block;
+    // margin-top: 48px;
+  }
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.header li a {
+  display: flex;
+  font-size: 1rem;
+
+  @include deskTopFirst(1022) {
+    padding: 2em 0.5em;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 800;
+  }
+}
+
+.menu {
+  li {
+    &:not(:last-child) {
+      padding-right: 48px;
+
+      @include deskTopFirst(1022) {
+        padding-right: 0;
+      }
+    }
+  }
+  .link-one,
+  .link-two,
+  .link-three {
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+
+    &:hover {
+      font-weight: 800;
+    }
+
+    @include deskTopFirst(1022) {
+      color: $white;
+      z-index: 401;
+    }
+  }
+  .link-one {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $card-bg;
+    }
+  }
+  .link-two {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $card-bg-2;
+    }
+  }
+  .link-three {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $card-bg-3;
+    }
+  }
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $card-bg;
+    background: linear-gradient(to right, #c84e89, #bf5ae0);
+    background: -webkit-linear-gradient(to right, #c84e89, #bf5ae0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @include deskTopFirst(1022) {
+    margin-left: 24px;
+  }
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  // transition: max-height 0.2s ease-in;
+  // -webkit-transition: max-height 0.2s ease-in;
+  // -moz-transition: max-height 0.2s ease-in;
+  // -ms-transition: max-height 0.2s ease-in;
+  // -o-transition: max-height 0.2s ease-in;
+
+  @include deskTopFirst(1022) {
+    display: grid;
+    place-items: center;
+    z-index: 900;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  // display: inline-block;
+  float: right;
+  padding: 16px 10px 10px 20px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 300;
+}
+
+.header .menu-icon .navicon {
+  // background: #333;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 30px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: $white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -8px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+// MENU HEIGHT WHEN CLICKED
+.header .menu-btn:checked ~ .menu {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  background: $bg-color;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 63.9375em) {
+  .header li {
+    float: left;
+  }
+  // .header li a {
+  //   padding: 20px 30px;
+  // }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+.collabo-section-wrap {
+  height: auto;
+  width: 100%;
+  max-width: calc(100% - 160px);
+  margin: 0 auto;
+  margin-top: 188px;
+  margin-bottom: 178px;
+
+  @include deskTopFirst(1022) {
+    width: 100%;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 56px;
+  }
+
+  .work-together-header {
+    font-size: calculate-rem(48px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 66px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $white;
+
+    @include deskTopFirst(1022) {
+      font-size: calculate-rem(24px);
+      line-height: 33px;
+    }
+  }
+  .work-email-label,
+  .work-email {
+    font-size: calculate-rem(20px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .work-email-label {
+    color: $white;
+    margin-top: calculate-rem(56px);
+    margin-bottom: 1rem;
+
+    @include deskTopFirst(1022) {
+      font-size: calculate-rem(16px);
+      margin-top: calculate-rem(40px);
+      line-height: 20.24px;
+    }
+  }
+  .work-email {
+    @include transition-color;
+    color: #cccccc;
+    text-decoration: underline;
+    cursor: pointer;
+    width: max-content;
+
+    @include deskTopFirst(1022) {
+      font-size: calculate-rem(14px);
+      line-height: 17.71px;
+    }
+
+    &:hover {
+      color: $card-bg;
+      background: linear-gradient(to right, #c84e89, #bf5ae0);
+      background: -webkit-linear-gradient(to right, #c84e89, #bf5ae0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &:focus,
+    &:active {
+      background: linear-gradient(to right, #2193b0, #05a8d1);
+      background: -webkit-linear-gradient(to right, #2193b0, #05a8d1);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+// FOOTER
+.footer-section-wrapper {
+  border: 1px solid #262626;
+  width: 100%;
+
+  .footer-section__inner {
+    @include double-layer;
+    padding-top: calculate-rem(46px);
+    padding-bottom: calculate-rem(44px);
+    @include flex-space-between;
+    width: 100%;
+
+    @include deskTopFirst(1022) {
+      @include column;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 24px 0;
+    }
+
+    .footer-socials-wrap {
+      flex: 1;
+
+      .social-link {
+        &:not(:last-of-type) {
+          margin-right: 32px;
+
+          @include deskTopFirst(1022) {
+            margin-right: 16px;
+          }
+        }
+
+        & svg {
+          width: 24px;
+          height: 24px;
+
+          @include deskTopFirst(1022) {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        &:hover .social-icon {
+          fill: $card-bg;
+        }
+        &:focus .social-icon {
+          stroke: $card-bg-2;
+        }
+
+        &:hover .drib-icon {
+          stroke: $card-bg;
+        }
+        &:focus .drib-icon {
+          stroke: $card-bg-2;
+        }
+        .drib-icon,
+        .social-icon {
+          @include transition;
+        }
+      }
+    }
+    .footer-copyright-wrap {
+      flex: 1;
+      justify-self: flex-end;
+
+      .copyright-text {
+        display: flex;
+        justify-content: flex-end;
+        font-size: calculate-rem(14px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #e5e5e5;
+
+        .white {
+          color: $white;
+        }
+      }
+    }
+  }
+}
