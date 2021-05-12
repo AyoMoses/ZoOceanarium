@@ -1,20 +1,16 @@
-// vars
-// CHECKBOX MENU CLOSE AFTER LINK CLICK
-var checkbox = document.querySelector('#menu-btn');
-var icon = document.querySelector('#menuicon');
+// NAVBAR
+var mainListDiv = document.getElementById("mainListDiv"),
+  mediaButton = document.getElementById("mediaButton");
 
-var listener = function (e) {
-  if (e.target != checkbox && e.target != icon) {
-    checkbox.checked = false;
-    document.removeEventListener('click', listener);
-  }
+mediaButton.onclick = function () {
+
+  "use strict";
+
+  mainListDiv.classList.toggle("show_list");
+  mediaButton.classList.toggle("active");
+  console.log('it works')
+
 };
-
-checkbox.addEventListener('click', function () {
-  if (this.checked) {
-    document.addEventListener('click', listener);
-  }
-});
 
 
 // SCROLL TO VIEW
