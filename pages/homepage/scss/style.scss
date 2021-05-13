@@ -1,1 +1,99 @@
 @import '../../../styles/global.scss';
+
+.member {
+  &__header-wrap {
+    width: 100%;
+    @include column;
+    align-items: center;
+  }
+  &__header {
+    font-size: calculate-rem(12px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: calculate-rem(30px);
+
+    @include respond(tab) {
+      font-size: calculate-rem(26px);
+      line-height: 35px;
+      margin-top: calculate-rem(32.84px);
+    }
+  }
+  & .horizontal-line {
+    @include hl($txt-body-accent, 50px);
+    margin-top: calculate-rem(10px);
+
+    @include respond(tab) {
+      margin-top: calculate-rem(20px);
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    padding-left: calculate-rem(45px);
+    padding-right: calculate-rem(36px);
+    margin-top: calculate-rem(54px);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+    grid-template-areas:
+      'logo-one logo-one logo-five logo-five logo-four logo-four'
+      'logo-two logo-two logo-two logo-three logo-three logo-three';
+    @include respond(tab) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0 80px;
+      padding-left: 113px;
+      padding-right: 114px;
+    }
+
+    .member-logo {
+      &:nth-child(1) {
+        width: 109px;
+        height: auto;
+        grid-area: logo-one;
+
+        @include respond(tab) {
+          width: 180px;
+        }
+      }
+      &:nth-child(2) {
+        width: 155px;
+        height: auto;
+        grid-area: logo-two;
+        @include respond(tab) {
+          width: 289px;
+        }
+      }
+      &:nth-child(3) {
+        width: 127px;
+        height: auto;
+        grid-area: logo-three;
+        @include respond(tab) {
+          width: 180px;
+        }
+      }
+      &:nth-child(4) {
+        width: 55px;
+        height: auto;
+        grid-area: logo-four;
+        @include respond(tab) {
+          width: 146px;
+        }
+      }
+      &:nth-child(5) {
+        width: 39px;
+        height: auto;
+        grid-area: logo-five;
+        @include respond(tab) {
+          width: 98px;
+        }
+      }
+    }
+  }
+}
