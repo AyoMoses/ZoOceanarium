@@ -833,7 +833,6 @@ header .logo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 1.9375rem;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -853,6 +852,7 @@ header .logo {
   color: #FCB415;
   margin-bottom: 0.625rem;
   width: 100vw;
+  padding: 0 1.9375rem;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -872,6 +872,7 @@ header .logo {
   width: 100vw;
   text-align: center;
   margin-bottom: 6.25rem;
+  padding: 0 1.9375rem;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -904,12 +905,13 @@ header .logo {
   background: url("/assets/icons/menu-shape.svg"), url("/assets/icons/menu-shape-2.svg"), url("/assets/bitmaps/menu-bg.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: top right, bottom right, center;
-  padding: 66px 25px 182px 60px;
+  padding: 36px 25px 182px 60px;
   width: calc(100% - 10%);
 }
 
 @media only screen and (min-width: 56.25em) {
   .menu {
+    padding: 66px 25px 182px 60px;
     width: 594px;
   }
 }
@@ -923,9 +925,16 @@ header .logo {
 }
 
 .menu__content .menu-logo {
-  width: 146px;
-  height: 92px;
+  height: 47px;
+  width: 75px;
   margin-bottom: 4.375rem;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .menu__content .menu-logo {
+    width: 146px;
+    height: 92px;
+  }
 }
 
 .menu__content-links-wrap {
@@ -988,18 +997,6 @@ header .logo {
 
 .menu__content-link:hover, .menu__content-link:active, .menu__content-link:focus {
   color: #FCB415;
-}
-
-.menu__content__social-link:hover svg {
-  fill: #FCB415;
-}
-
-.menu__content__social-link:focus svg {
-  fill: #f4a903;
-}
-
-.menu__content__social-link:active svg {
-  fill: #efa603;
 }
 
 .menu__content-social-icon {
