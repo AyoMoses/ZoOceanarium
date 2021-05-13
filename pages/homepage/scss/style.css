@@ -975,11 +975,11 @@ header .logo {
   font-weight: 800;
   line-height: 27px;
   letter-spacing: 0em;
-  transition: color 0.3s linear;
-  -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-  -ms-transition: color 0.3s linear;
-  -o-transition: color 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
   color: #FFFFFF;
   text-transform: uppercase;
 }
@@ -997,6 +997,11 @@ header .logo {
 
 .menu__content-link:hover, .menu__content-link:active, .menu__content-link:focus {
   color: #FCB415;
+  transform: translateX(5px);
+  -webkit-transform: translateX(5px);
+  -moz-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  -o-transform: translateX(5px);
 }
 
 .menu__content-social-icon {

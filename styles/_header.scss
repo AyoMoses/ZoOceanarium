@@ -342,7 +342,7 @@ header .logo {
   background-position: top right, bottom right, center;
   padding: 36px 25px 182px 60px;
   width: calc(100% - 10%);
-  
+
   @include respond(tab) {
     padding: 66px 25px 182px 60px;
     width: 594px;
@@ -380,7 +380,7 @@ header .logo {
     }
     &-link {
       @include h1-mini;
-      @include transition-color;
+      @include transition;
       color: $col-white;
       text-transform: uppercase;
 
@@ -388,6 +388,11 @@ header .logo {
       &:active,
       &:focus {
         color: $txt-body-accent;
+        transform: translateX(5px);
+        -webkit-transform: translateX(5px);
+        -moz-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        -o-transform: translateX(5px);
       }
     }
 
