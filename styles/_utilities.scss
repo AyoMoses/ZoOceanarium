@@ -12,7 +12,7 @@
   }
 }
 
-.btn {
+.button {
   width: 260px;
   height: 50px;
   outline: none;
@@ -38,7 +38,7 @@
   }
 }
 
-.btn--accent-bg {
+.button--accent-bg {
   background: $col-accent;
   color: $col-brand;
   display: inline-block;
@@ -90,7 +90,7 @@
   }
 }
 
-.btn--primary-bg {
+.button--primary-bg {
   background: $col-primary-light;
   color: $col-brand;
   display: inline-block;
@@ -142,7 +142,7 @@
   }
 }
 
-.btn--primary-border { 
+.button--primary-border { 
   border: 2px solid $col-primary-light;
   background: transparent;
   color: $col-primary-light;

@@ -1,16 +1,24 @@
 // NAVBAR
-var mainListDiv = document.getElementById("mainListDiv"),
-  mediaButton = document.getElementById("mediaButton");
+// let mainListDiv = document.getElementById("mainListDiv"),
+//   mediaButton = document.getElementById("mediaButton");
 
-mediaButton.onclick = function () {
+// mediaButton.onclick = function () {
 
-  "use strict";
+//   "use strict";
 
-  mainListDiv.classList.toggle("show_list");
-  mediaButton.classList.toggle("active");
-  console.log('it works')
+//   mainListDiv.classList.toggle("show_list");
+//   mediaButton.classList.toggle("active");
+//   console.log('it works');
 
-};
+// };
+
+const menuToggle = document.querySelector('.toggle');
+const showcase = document.querySelector('.showcase');
+
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  showcase.classList.toggle('active');
+})
 
 
 // SCROLL TO VIEW

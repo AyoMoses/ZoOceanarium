@@ -7,7 +7,6 @@ $font-decorative: 'Pacifico', cursive;
   font-weight: 900;
   line-height: 27px;
   letter-spacing: 0em;
-  text-align: left;
 
   @include respond(tab) {
     font-size: calculate-rem(50px);
@@ -15,7 +14,6 @@ $font-decorative: 'Pacifico', cursive;
     font-weight: 900;
     line-height: 66px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
 
@@ -25,7 +23,6 @@ $font-decorative: 'Pacifico', cursive;
   font-weight: 800;
   line-height: 27px;
   letter-spacing: 0em;
-  text-align: left;
 
   @include respond(tab) {
     font-family: Exo;
@@ -34,7 +31,6 @@ $font-decorative: 'Pacifico', cursive;
     font-weight: 800;
     line-height: 53px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
 
@@ -44,7 +40,6 @@ $font-decorative: 'Pacifico', cursive;
   font-weight: 700;
   line-height: 27px;
   letter-spacing: 0em;
-  text-align: left;
 
   @include respond(tab) {
     font-family: Exo;
@@ -53,7 +48,6 @@ $font-decorative: 'Pacifico', cursive;
     font-weight: 800;
     line-height: 53px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
 
@@ -63,7 +57,6 @@ $font-decorative: 'Pacifico', cursive;
   font-weight: 700;
   line-height: 21px;
   letter-spacing: 0em;
-  text-align: left;
 
   @include respond(tab) {
     font-size: calculate-rem(30px);
@@ -71,19 +64,16 @@ $font-decorative: 'Pacifico', cursive;
     font-weight: 700;
     line-height: 40px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
 
 @mixin h4 {
   @include respond(tab) {
-    font-family: Exo;
     font-size: 26px;
     font-style: normal;
     font-weight: 700;
     line-height: 35px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
 
@@ -93,7 +83,6 @@ $font-decorative: 'Pacifico', cursive;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0em;
-  text-align: left;
 
   @include respond(tab) {
     font-size: calculate-rem(12px);
@@ -101,7 +90,6 @@ $font-decorative: 'Pacifico', cursive;
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
 
@@ -111,14 +99,12 @@ $font-decorative: 'Pacifico', cursive;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0em;
-  text-align: left;
   @include respond(tab) {
     font-size: calculate-rem(18px);
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
 
@@ -129,7 +115,6 @@ $font-decorative: 'Pacifico', cursive;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 0em;
-  text-align: left;
 
   @include respond(tab) {
     font-family: $font-decorative;
@@ -138,6 +123,5 @@ $font-decorative: 'Pacifico', cursive;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0em;
-    text-align: left;
   }
 }
