@@ -196,11 +196,13 @@
 }
 
 // HORIZONTAL LINE
-@mixin hl($color,$width) {
+@mixin hl($color, $width) {
+  margin-top: calculate-rem(10px);
   border-top: 2px solid $color;
   width: $width;
 
   @include respond(tab) {
+    margin-top: calculate-rem(20px);
     border-top: 4px solid $color;
     width: $width;
   }
