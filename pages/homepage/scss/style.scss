@@ -297,3 +297,102 @@
     }
   }
 }
+
+// GLOBAL SECTION
+.global-section {
+  height: auto;
+  width: 100%;
+  padding: 40px 31px 40px 30px;
+  background: $col-primary;
+  @include column;
+  align-items: center;
+  gap: 34px 0;
+
+  @include respond(tab) {
+    padding: 67px 124px 71.73px 60px;
+    background: $col-primary url('/assets/icons/global-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    @include flex-space-between;
+    gap: 0 20%;
+  }
+
+  & .globe-wrap {
+    // border-radius: 100%;
+    // -webkit-border-radius: 100%;
+    // -moz-border-radius: 100%;
+    // -ms-border-radius: 100%;
+    // -o-border-radius: 100%;
+    // width: 220px;
+    // height: 220px;
+    // background-image: url('/assets/icons/globe-mobile.svg');
+    // background-repeat: no-repeat;
+    // animation: spin 3s linear alternate infinite;
+    // -webkit-animation: spin 3s linear alternate infinite;
+
+    @include respond(tab) {
+      // width: 100%;
+      // height: 700px;
+      // min-height: 600px;
+      // max-height: 700px;
+      // background-image: url('/assets/icons/earth-globe-blue.svg');
+      // background-repeat: no-repeat;
+      // background-size: cover;
+    
+    }
+    
+    .web-globe {
+      display: none;
+      @include respond(tab) {
+        display: block;
+      }
+    }
+    .img-mobile {
+      display: block;
+      @include respond(tab) {
+        display: none;
+      }
+    }
+  }
+
+  .global-section__content {
+    @include column;
+    align-items: center;
+
+    @include respond(tab) {
+      @include column;
+      align-items: flex-start;
+    }
+    .global-section__content-header {
+      font-size: calculate-rem(20px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: $col-white;
+
+      @include respond(tab) {
+        font-size: 40px;
+        line-height: 60px;
+        text-align: left;
+      }
+    }
+    .global-section__content-sub-detail {
+      font-size: calculate-rem(12px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: $col-white;
+      margin-top: calculate-rem(10px);
+      margin-bottom: calculate-rem(30px);
+      @include respond(tab) {
+        font-size: calculate-rem(18px);
+        line-height: 30px;
+        text-align: left;
+      }
+    }
+  }
+}
