@@ -40,6 +40,7 @@
         line-height: 16px;
         letter-spacing: 0em;
         text-align: center;
+        text-shadow: 0.5px 0.5px $txt-heading;
 
         &:hover,
         &:active {
@@ -57,9 +58,12 @@
     .mobile-contact-cta {
       margin-top: 17px;
       color: $col-white;
+      font-weight: 700;
+      text-shadow: 0.3px 0.3px $txt-heading;
 
       @include respond(tab) {
         margin-top: 0;
+        font-weight: 400;
       }
     }
 
@@ -235,6 +239,7 @@
     margin-bottom: $m10;
     width: 100vw;
     padding: 0 calculate-rem(31px);
+    text-shadow: 0.5px 0.5px $txt-heading;
 
     @include respond(tab) {
       font-size: calculate-rem(20px);
@@ -248,6 +253,7 @@
     text-align: center;
     margin-bottom: $m100;
     padding: 0 calculate-rem(31px);
+    text-shadow: 0.2px 0.2px $txt-heading;
 
     @include respond(tab) {
       margin-bottom: $m50;

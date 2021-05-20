@@ -11,6 +11,17 @@ $m10: calculate-rem(10px);
 .block {
   display: block;
 }
+.block-mobile {
+  display: block;
+  @include respond(tab) {
+    display: inline;
+  }
+}
+.block-web {
+  @include respond(tab) {
+    display: block;
+  }
+}
 .bold {
   font-weight: 900;
 }

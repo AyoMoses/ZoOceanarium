@@ -1,0 +1,157 @@
+.footer-section {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(180deg, #1970b3 0%, #003157 100%);
+  padding: 44px 50px 23px 50px;
+  @include respond(tab) {
+    padding: 25px 87px 41px 50px;
+  }
+
+  &__top {
+    width: 100%;
+    @include column;
+    align-items: center;
+    @include respond(tab) {
+      @include flex-space-between;
+    }
+    & .footer-logo {
+      width: 93px;
+      height: 58px;
+      margin-bottom: 40px;
+      @include respond(tab) {
+        width: 175px;
+        height: 110px;
+      }
+    }
+    &-link-wrap {
+      @include respond(tab) {
+        @include column;
+        align-items: center;
+      }
+      .top-links,
+      .lower-links {
+        @include row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 37px 102px;
+
+        @include respond(tab) {
+          @include row;
+          gap: 54px 80px;
+        }
+      }
+      .footer-section__top-link-item {
+        &:last-child {
+          margin-bottom: 37px;
+        }
+      }
+      .footer-section__top-link {
+        @include transition-color;
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: $col-white;
+        &:hover,
+        &:active {
+          color: $col-accent;
+        }
+        @include respond(tab) {
+          font-size: calculate-rem(18px);
+          font-weight: 500;
+          line-height: 24px;
+          text-align: left;
+        }
+      }
+    }
+
+    &-social {
+      @include column;
+      justify-content: center;
+      margin-top: 10px;
+      @include respond(tab) {
+        @include row;
+        margin-top: 0;
+      }
+      .footer-section-top__social-icons-wrap {
+        @include row;
+        gap: 0 50px;
+        @include respond(tab) {
+          gap: 0 30px;
+        }
+      }
+
+      .footer-section-social-title {
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-bottom: 22px;
+        color: $col-white;
+        @include respond(tab) {
+          display: none;
+        }
+      }
+
+      & .social-icon {
+        width: 30px;
+        height: 30px;
+
+        &:hover path {
+          @include transition;
+          &:hover {
+            fill: $col-accent;
+          }
+          &:focus {
+            fill: darken($color: $col-accent, $amount: 5%);
+          }
+          &:active {
+            fill: darken($color: $col-accent, $amount: 6%);
+          }
+        }
+
+        path {
+          fill: $col-white;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    margin-top: 41px;
+    @include row;
+    justify-content: center;
+    @include respond(tab) {
+      margin-top: 90px;
+    }
+
+    &-copyrights {
+      font-size: calculate-rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0em;
+      color: $col-white;
+      opacity: 0.6;
+      text-align: center;
+
+      & .block-mobile {
+        margin-top: 11px;
+        @include respond(tab) {
+          margin-top: 0;
+        }
+      }
+
+      @include respond(tab) {
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 21px;
+      }
+    }
+  }
+}
