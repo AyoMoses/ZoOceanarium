@@ -766,3 +766,208 @@
     }
   }
 }
+
+// SERVICES
+.services-section {
+  padding: 0 0 6.25rem 0;
+  width: 100%;
+
+  @include respond(tab) {
+    padding: 4rem 0 6.75rem 0;
+  }
+
+  & .services-watermark-header-wrap {
+    width: 100%;
+    position: relative;
+    @include column;
+    align-items: center;
+    justify-content: flex-start;
+
+    & .services-watermark {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -45px;
+      z-index: 0;
+      font-family: $font-decorative;
+      color: rgba(38, 34, 88, 0.03);
+      width: 100%;
+      font-size: calculate-rem(50px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 176px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      @include respond(tab) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: calculate-rem(150px);
+        line-height: 176px;
+        left: -31px;
+        bottom: -15px;
+      }
+    }
+    & .services-watermark-foreground-header {
+      z-index: 1;
+      font-size: calculate-rem(20px);
+      font-style: normal;
+      font-weight: 800;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      @include respond(tab) {
+        font-size: calculate-rem(40px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 53px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+    & .hl {
+      z-index: 1;
+      @include hl($col-accent, 50px);
+    }
+  }
+  & .services-subheader {
+    font-size: calculate-rem(12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: calculate-rem(12px);
+    margin-bottom: calculate-rem(26px);
+    padding: 0 calculate-rem(18px);
+
+    @include respond(tab) {
+      font-size: 18px;
+      line-height: 30px;
+      font-size: calculate-rem(18px);
+      margin-top: calculate-rem(30px);
+      margin-bottom: calculate-rem(80px);
+    }
+  }
+
+  .services-section__content {
+    @include column;
+    width: 100%;
+
+    [class].serv-wrap-two {
+      @include respond(tab) {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+    .services-section__content-row {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+
+      @include respond(tab) {
+        @include row;
+        height: 600px;
+      }
+
+      .serv-one {
+        background-color: #262258;
+        height: auto;
+      }
+      .serv-two {
+        background-color: #1a75bc;
+        height: auto;
+      }
+      .serv-three {
+        background-color: #fcb415;
+        height: auto;
+
+        [class].col-unique {
+          color: $txt-heading;
+        }
+        [class].col-unique-hr {
+          @include hl($txt-heading, 50px);
+        }
+      }
+
+      .services-content-detail-wrap {
+        height: 100%;
+        width: 100%;
+        padding: 50px 55px 50px 54px;
+        @include column;
+        align-content: center;
+        @include respond(tab) {
+          width: 50%;
+          padding: 90px 6% 90px 6%;
+        }
+        .services-content-header {
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 21px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: $col-white;
+          @include respond(tab) {
+            font-size: calculate-rem(26px);
+            line-height: 35px;
+          }
+        }
+        .services-hl {
+          @include hl($col-accent, 50px);
+          text-align: center;
+          align-self: center;
+        }
+        .services-content-text {
+          font-size: calculate-rem(12px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: $col-white;
+          margin-top: calculate-rem(15px);
+
+          @include respond(tab) {
+            font-size: calculate-rem(18px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: center;
+          }
+        }
+      }
+
+      .services-content-image-wrap {
+        width: 100%;
+        height: 100%;
+        @include respond(tab) {
+          width: 50%;
+        }
+        .services-content-image {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .services__content-footer {
+    width: 100%;
+    @include column;
+    align-items: center;
+    margin-top: calculate-rem(30px);
+    @include respond(tab) {
+      margin-top: calculate-rem(70px);
+    }
+    .services__content-header {
+      margin-bottom: calculate-rem(18px);
+      @include respond(tab) {
+        margin-bottom: calculate-rem(30px);
+      }
+    }
+  }
+}
+// SERVICES
