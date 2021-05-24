@@ -1051,7 +1051,8 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-      grid-template-areas: 'logo-one logo-one logo-five logo-five logo-four logo-four' 'logo-two logo-two logo-two logo-three logo-three logo-three';
+      grid-template-areas: 'logo-one logo-one logo-five logo-five logo-four logo-four'
+ 'logo-two logo-two logo-two logo-three logo-three logo-three';
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -1336,7 +1337,9 @@ h6 {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-      grid-template-areas: 'we-one we-one we-one we-one' 'we-two we-two we-three we-three' 'we-four we-four we-four we-four';
+      grid-template-areas: 'we-one we-one we-one we-one'
+ 'we-two we-two we-three we-three'
+ 'we-four we-four we-four we-four';
   gap: 10px;
   justify-items: end;
 }
@@ -1984,7 +1987,8 @@ h6 {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-      grid-template-areas: 'projone projone projtwo projtwo' 'projthree projthree projthree projthree';
+      grid-template-areas: 'projone projone projtwo projtwo'
+ 'projthree projthree projthree projthree';
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -3242,6 +3246,43 @@ h6 {
   .people-inspired-section__image {
     width: 50%;
     margin-top: 0;
+  }
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.counter_text {
+  -webkit-animation: counter 5s infinite alternate ease-in-out;
+          animation: counter 5s infinite alternate ease-in-out;
+  /* counter-reset: num var(--num); */
+  counter-increment: num var(--num);;
+  font: 800 40px system-ui;
+  padding: 2rem;
+}
+
+.counter_text::after {
+  content: counter(num);
+}
+
+@-webkit-keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 100;
+  }
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 100;
   }
 }
 /*# sourceMappingURL=style.css.map */
