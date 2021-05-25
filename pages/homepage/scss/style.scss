@@ -1,25 +1,1526 @@
-// Counter
-@property --num {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
+@import '../../../styles/global.scss';
+
+.member {
+  &__header-wrap {
+    width: 100%;
+    @include column;
+    align-items: center;
+  }
+  &__header {
+    font-size: calculate-rem(12px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: calculate-rem(30px);
+
+    @include respond(tab) {
+      font-size: calculate-rem(26px);
+      line-height: 35px;
+      margin-top: calculate-rem(32.84px);
+    }
+  }
+  & .horizontal-line {
+    @include hl($txt-body-accent, 50px);
+  }
+
+  &__inner {
+    width: 100%;
+    padding-left: calculate-rem(45px);
+    padding-right: calculate-rem(36px);
+    margin-top: calculate-rem(54px);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+    grid-template-areas:
+      'logo-one logo-one logo-five logo-five logo-four logo-four'
+      'logo-two logo-two logo-two logo-three logo-three logo-three';
+    @include respond(tab) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0 80px;
+      padding-left: 113px;
+      padding-right: 114px;
+    }
+
+    .member-logo {
+      &:nth-child(1) {
+        width: 109px;
+        height: auto;
+        grid-area: logo-one;
+
+        @include respond(tab) {
+          width: 180px;
+        }
+      }
+      &:nth-child(2) {
+        width: 155px;
+        height: auto;
+        grid-area: logo-two;
+        @include respond(tab) {
+          width: 289px;
+        }
+      }
+      &:nth-child(3) {
+        width: 127px;
+        height: auto;
+        grid-area: logo-three;
+        @include respond(tab) {
+          width: 180px;
+        }
+      }
+      &:nth-child(4) {
+        width: 55px;
+        height: auto;
+        grid-area: logo-four;
+        @include respond(tab) {
+          width: 146px;
+        }
+      }
+      &:nth-child(5) {
+        width: 39px;
+        height: auto;
+        grid-area: logo-five;
+        @include respond(tab) {
+          width: 98px;
+        }
+      }
+    }
+  }
 }
 
-.counter_text {
-  animation: counter 5s infinite alternate ease-in-out;
-  counter-reset: num var(--num);
-  font: 800 40px system-ui;
-  padding: 2rem;
-}
-.counter_text::after {
-  content: counter(num);
+.who-we-are {
+  @include column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-left: calculate-rem(20px);
+  padding-right: calculate-rem(19px);
+  padding-top: calculate-rem(37px);
+  padding-bottom: calculate-rem(65px);
+  margin-top: calculate-rem(43px);
+  @include respond(tab) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: calculate-rem(97px);
+    padding-bottom: calculate-rem(70px);
+    padding-right: 0;
+    // padding-top: 0;
+    // margin-top: calculate-rem(32px);
+    background: rgba(25, 112, 179, 0.04);
+  }
+
+  & .mobile-button {
+    margin-top: calculate-rem(30px);
+    @include respond(tab) {
+      display: none;
+    }
+  }
+
+  & .who-we-are__content-wrap {
+    & .web-button {
+      display: none;
+      @include respond(tab) {
+        display: block;
+        margin-top: calculate-rem(30px);
+      }
+    }
+
+    & .watermark-header-wrap {
+      position: relative;
+      @include column;
+      align-items: center;
+
+      @include respond(tab) {
+        align-items: flex-start;
+      }
+
+      & .watermark {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -45px;
+        z-index: 0;
+        font-family: $font-decorative;
+        color: rgba(38, 34, 88, 0.03);
+        width: 100%;
+        font-size: calculate-rem(50px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 176px;
+        letter-spacing: 0em;
+        text-align: center;
+        white-space: nowrap;
+
+        @include respond(tab) {
+          font-style: normal;
+          font-weight: normal;
+          font-size: calculate-rem(100px);
+          line-height: 176px;
+          text-align: left;
+          left: -31px;
+          bottom: -15px;
+        }
+      }
+      & .watermark-foreground-header {
+        z-index: 1;
+        font-size: calculate-rem(20px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include respond(tab) {
+          font-size: calculate-rem(40px);
+          font-style: normal;
+          font-weight: 800;
+          line-height: 53px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+      }
+      & .hl {
+        z-index: 1;
+        @include hl($col-primary-light, 50px);
+      }
+    }
+
+    & .who-we-are-content {
+      margin-top: 10px;
+
+      @include respond(tab) {
+        margin-top: 35px;
+      }
+
+      & .who-we-are-text {
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+
+        &:not(:last-child) {
+          margin-bottom: 1.2rem;
+        }
+
+        @include respond(tab) {
+          font-family: Roboto Slab;
+          font-size: calculate-rem(18px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: 0em;
+          text-align: left;
+          padding-right: 5%;
+        }
+      }
+    }
+  }
+  .who-we-are__images-wrap {
+    width: 100%;
+    height: auto;
+    margin-top: calculate-rem(30px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'we-one we-one we-one we-one'
+      'we-two we-two we-three we-three'
+      'we-four we-four we-four we-four';
+    gap: 10px;
+    justify-items: end;
+
+    @include respond(tab) {
+      gap: 20px;
+      margin-top: 0;
+    }
+
+    .who-we-img-wrap {
+      width: 100%;
+      overflow: hidden;
+
+      &:nth-child(1) {
+        grid-area: we-one;
+        height: 284px;
+        width: 100%;
+        background: $col-brand;
+
+        @include respond(tab) {
+          width: 80%;
+        }
+      }
+      &:nth-child(2) {
+        grid-area: we-two;
+        height: 261px;
+        background: $col-brand;
+      }
+      &:nth-child(3) {
+        grid-area: we-three;
+        height: 261px;
+        background: $col-brand;
+      }
+      &:nth-child(4) {
+        grid-area: we-four;
+        height: 284px;
+        width: 100%;
+        background: $col-brand;
+
+        @include respond(tab) {
+          width: 80%;
+        }
+      }
+      .who-we-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.6s cubic-bezier(0.14, 0.56, 0.72, 0.59);
+        -webkit-transition: 0.6s cubic-bezier(0.14, 0.56, 0.72, 0.59);
+        -moz-transition: 0.6s cubic-bezier(0.14, 0.56, 0.72, 0.59);
+        -ms-transition: 0.6s cubic-bezier(0.14, 0.56, 0.72, 0.59);
+        -o-transition: 0.6s cubic-bezier(0.14, 0.56, 0.72, 0.59);
+        background-color: $col-brand;
+
+        &:hover,
+        &:active {
+          transform: scale(1.3);
+          -webkit-transform: scale(1.3);
+          -moz-transform: scale(1.3);
+          -ms-transform: scale(1.3);
+          -o-transform: scale(1.3);
+        }
+      }
+    }
+  }
 }
 
-@keyframes counter {
-  from {
-    --num: 0;
+// GLOBAL SECTION
+.global-section {
+  height: auto;
+  width: 100%;
+  padding: 40px 31px 40px 30px;
+  background: $col-primary;
+  @include column;
+  align-items: center;
+  gap: 34px 0;
+
+  @include respond(tab) {
+    padding: 67px 124px 71.73px 60px;
+    background: $col-primary url('/assets/icons/global-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    @include flex-space-between;
+    gap: 0 20%;
   }
-  to {
-    --num: 100;
+
+  & .globe-wrap {
+    // border-radius: 100%;
+    // -webkit-border-radius: 100%;
+    // -moz-border-radius: 100%;
+    // -ms-border-radius: 100%;
+    // -o-border-radius: 100%;
+    // width: 220px;
+    // height: 220px;
+    // background-image: url('/assets/icons/globe-mobile.svg');
+    // background-repeat: no-repeat;
+    // animation: spin 3s linear alternate infinite;
+    // -webkit-animation: spin 3s linear alternate infinite;
+
+    @include respond(tab) {
+      // width: 100%;
+      // height: 700px;
+      // min-height: 600px;
+      // max-height: 700px;
+      // background-image: url('/assets/icons/earth-globe-blue.svg');
+      // background-repeat: no-repeat;
+      // background-size: cover;
+    }
+
+    .web-globe {
+      display: none;
+      @include respond(tab) {
+        display: block;
+      }
+    }
+    .img-mobile {
+      display: block;
+      @include respond(tab) {
+        display: none;
+      }
+    }
+  }
+
+  .global-section__content {
+    @include column;
+    align-items: center;
+
+    @include respond(tab) {
+      @include column;
+      align-items: flex-start;
+    }
+    .global-section__content-header {
+      font-size: calculate-rem(20px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: $col-white;
+
+      @include respond(tab) {
+        font-size: 40px;
+        line-height: 60px;
+        text-align: left;
+      }
+    }
+    .global-section__content-sub-detail {
+      font-size: calculate-rem(12px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: $col-white;
+      margin-top: calculate-rem(10px);
+      margin-bottom: calculate-rem(30px);
+      @include respond(tab) {
+        font-size: calculate-rem(18px);
+        line-height: 30px;
+        text-align: left;
+      }
+    }
   }
 }
+
+// PROJECTS
+.projects-section {
+  padding: 4rem 1.875rem;
+  width: 100%;
+
+  @include respond(tab) {
+    padding: 6rem 3.75rem;
+  }
+
+  & .projects-watermark-header-wrap {
+    width: 100%;
+    position: relative;
+    @include column;
+    align-items: center;
+    justify-content: flex-start;
+
+    & .projects-watermark {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -45px;
+      z-index: 0;
+      font-family: $font-decorative;
+      color: rgba(38, 34, 88, 0.03);
+      width: 100%;
+      font-size: calculate-rem(50px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 176px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      @include respond(tab) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: calculate-rem(150px);
+        line-height: 176px;
+        left: -31px;
+        bottom: -15px;
+      }
+    }
+    & .projects-watermark-foreground-header {
+      z-index: 1;
+      font-size: calculate-rem(20px);
+      font-style: normal;
+      font-weight: 800;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      @include respond(tab) {
+        font-size: calculate-rem(40px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 53px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+    & .hl {
+      z-index: 1;
+      @include hl($col-accent, 50px);
+    }
+  }
+
+  &__project-slider {
+    &:not(:last-of-type) {
+      margin-bottom: 4.375rem;
+
+      @include respond(tab) {
+        margin-bottom: 11.595625rem;
+      }
+    }
+    .web-link {
+      display: none;
+      @include respond(tab) {
+        display: block;
+      }
+    }
+    .mobile-link {
+      display: block;
+      @include respond(tab) {
+        display: none;
+      }
+    }
+  }
+
+  & .gp-slide {
+    @include column;
+    align-items: center;
+    gap: 42px 0;
+    padding-top: 40px;
+
+    @include respond(tab) {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 0 72px;
+    }
+  }
+
+  &__project-slide-inner {
+    @include column;
+    align-items: center;
+    gap: 42px 0;
+    padding-top: 40px;
+
+    @include respond(tab) {
+      @include flex-space-between;
+      gap: 0 72px;
+    }
+
+    .louis-watermark {
+      &:after {
+        content: url('/assets/icons/st-louis-aquarium-watermark.svg');
+      }
+    }
+    .gp-watermark {
+      &:after {
+        content: url('/assets/icons/green-planet-watermark.svg');
+      }
+    }
+    .fg-watermark {
+      &:after {
+        content: url('/assets/icons/fishguys-watermark.svg');
+      }
+    }
+    .col-watermark {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+
+      &:after {
+        position: absolute;
+        bottom: -30px;
+        z-index: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 220px;
+        height: 187px;
+
+        @include respond(tab) {
+          width: 320px;
+          height: 227px;
+          display: grid;
+          place-items: center;
+          bottom: 80px;
+          left: 25%;
+        }
+      }
+    }
+
+    .project-col {
+      width: 100%;
+      @include column;
+      align-items: center;
+
+      @include respond(tab) {
+        align-items: flex-start;
+      }
+      .louis-logo {
+        width: 65px;
+        height: 55px;
+
+        @include respond(tab) {
+          width: 114px;
+          height: 97px;
+        }
+      }
+      .gp-logo {
+        width: 54px;
+        height: 55px;
+
+        @include respond(tab) {
+          width: 86px;
+          height: 87px;
+        }
+      }
+      .fg-logo {
+        width: 80px;
+        height: 40px;
+
+        @include respond(tab) {
+          width: 165px;
+          height: 82px;
+        }
+      }
+      .project-company {
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: $txt-heading;
+        margin-top: calculate-rem(20px);
+        margin-bottom: calculate-rem(8px);
+        @include respond(tab) {
+          font-size: calculate-rem(30px);
+          line-height: 40px;
+          text-align: left;
+          margin: calculate-rem(20px) 0;
+        }
+      }
+      .fg-location {
+        margin-top: calculate-rem(8px);
+        @include respond(tab) {
+          margin-top: calculate-rem(20px);
+        }
+      }
+      .project-location {
+        font-family: $font-decorative;
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+        @include respond(tab) {
+          font-family: $font-decorative;
+          font-size: calculate-rem(18px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+      }
+      .hl {
+        @include hl($col-accent, 50px);
+        margin-bottom: calculate-rem(10px);
+        @include respond(tab) {
+          margin-bottom: calculate-rem(10px);
+        }
+      }
+      .project-profile {
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+
+        @include respond(tab) {
+          font-size: calculate-rem(18px);
+          line-height: 30px;
+          text-align: left;
+        }
+      }
+
+      .main-image {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .proj-link {
+    @include transition-color;
+    font-size: calculate-rem(12px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: $col-accent;
+    margin-top: calculate-rem(30px);
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: $col-primary-light;
+    }
+
+    @include respond(tab) {
+      font-size: calculate-rem(18px);
+    }
+  }
+
+  & .thumbnails-img-wrap {
+    width: 100%;
+    @include transition;
+    margin-top: calculate-rem(30px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-areas:
+      'projone projone projtwo projtwo'
+      'projthree projthree projthree projthree';
+
+    @include respond(tab) {
+      margin-top: calculate-rem(60px);
+      @include flex-row;
+      gap: 0 calculate-rem(40px);
+      padding: 0 170px;
+    }
+    .thumbnail {
+      position: relative;
+      @include transition;
+
+      &:nth-child(1) {
+        grid-area: projthree;
+      }
+      &:nth-child(2) {
+        grid-area: projone;
+      }
+      &:nth-child(3) {
+        grid-area: projtwo;
+      }
+
+      &:hover .thumbnail-text-overlay,
+      &:focus .thumbnail-text-overlay {
+        display: block;
+        @include transition;
+        opacity: 1;
+      }
+
+      @include respond(tab) {
+        height: 290px;
+        width: 340px;
+      }
+      &__img {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+        background-color: $col-brand;
+      }
+      & .thumbnail-text-overlay {
+        width: 100%;
+        height: 100%;
+        background-color: $col-primary-light;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0.8rem 1.2875rem 0.8rem;
+        opacity: 0;
+
+        @include respond(tab) {
+          align-items: flex-start;
+          padding: 1.875rem 1.25rem 2.6875rem 1.25rem;
+        }
+        .thumbnail__text {
+          color: $col-white;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: 0em;
+          text-align: center;
+          @include line-clamp(4);
+
+          @include respond(tab) {
+            @include line-clamp(6);
+            font-size: calculate-rem(18px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// SERVICES
+.services-section {
+  padding: 0 0 6.25rem 0;
+  width: 100%;
+
+  @include respond(tab) {
+    padding: 4rem 0 6.75rem 0;
+  }
+
+  & .services-watermark-header-wrap {
+    width: 100%;
+    position: relative;
+    @include column;
+    align-items: center;
+    justify-content: flex-start;
+
+    & .services-watermark {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -45px;
+      z-index: 0;
+      font-family: $font-decorative;
+      color: rgba(38, 34, 88, 0.03);
+      width: 100%;
+      font-size: calculate-rem(50px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 176px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      @include respond(tab) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: calculate-rem(150px);
+        line-height: 176px;
+        left: -31px;
+        bottom: -15px;
+      }
+    }
+    & .services-watermark-foreground-header {
+      z-index: 1;
+      font-size: calculate-rem(20px);
+      font-style: normal;
+      font-weight: 800;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      @include respond(tab) {
+        font-size: calculate-rem(40px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 53px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+    & .hl {
+      z-index: 1;
+      @include hl($col-accent, 50px);
+    }
+  }
+  & .services-subheader {
+    font-size: calculate-rem(12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: calculate-rem(12px);
+    margin-bottom: calculate-rem(26px);
+    padding: 0 calculate-rem(18px);
+
+    @include respond(tab) {
+      font-size: 18px;
+      line-height: 30px;
+      font-size: calculate-rem(18px);
+      margin-top: calculate-rem(30px);
+      margin-bottom: calculate-rem(80px);
+    }
+  }
+
+  .services-section__content {
+    @include column;
+    width: 100%;
+
+    [class].serv-wrap-two {
+      @include respond(tab) {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+    .services-section__content-row {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+
+      @include respond(tab) {
+        @include row;
+        height: 600px;
+      }
+
+      .serv-one {
+        background-color: #262258;
+        height: auto;
+      }
+      .serv-two {
+        background-color: #1a75bc;
+        height: auto;
+      }
+      .serv-three {
+        background-color: #fcb415;
+        height: auto;
+
+        [class].col-unique {
+          color: $txt-heading;
+        }
+        [class].col-unique-hr {
+          @include hl($txt-heading, 50px);
+        }
+      }
+
+      .services-content-detail-wrap {
+        height: 100%;
+        width: 100%;
+        padding: 50px 55px 50px 54px;
+        @include column;
+        align-content: center;
+        @include respond(tab) {
+          width: 50%;
+          padding: 90px 6% 90px 6%;
+        }
+        .services-content-header {
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 21px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: $col-white;
+          @include respond(tab) {
+            font-size: calculate-rem(26px);
+            line-height: 35px;
+          }
+        }
+        .services-hl {
+          @include hl($col-accent, 50px);
+          text-align: center;
+          align-self: center;
+        }
+        .services-content-text {
+          font-size: calculate-rem(12px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: $col-white;
+          margin-top: calculate-rem(15px);
+
+          @include respond(tab) {
+            font-size: calculate-rem(18px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: center;
+          }
+        }
+      }
+
+      .services-content-image-wrap {
+        width: 100%;
+        height: 100%;
+        @include respond(tab) {
+          width: 50%;
+        }
+        .services-content-image {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .services__content-footer {
+    width: 100%;
+    @include column;
+    align-items: center;
+    margin-top: calculate-rem(30px);
+    @include respond(tab) {
+      margin-top: calculate-rem(70px);
+    }
+    .services__content-header {
+      margin-bottom: calculate-rem(18px);
+      @include respond(tab) {
+        margin-bottom: calculate-rem(30px);
+      }
+    }
+  }
+}
+// SERVICES
+
+// ABOUT US SECTION
+.about-us-section {
+  width: 100%;
+  padding-right: calculate-rem(18px);
+  padding-left: calculate-rem(19px);
+  margin-top: calculate-rem(70px);
+  margin-bottom: calculate-rem(70px);
+
+  @include respond(tab) {
+    padding-right: calculate-rem(42px);
+    padding-left: calculate-rem(60px);
+    margin-top: calculate-rem(100px);
+    margin-bottom: calculate-rem(120px);
+  }
+  & .watermark-header-wrap {
+    position: relative;
+    @include column;
+    align-items: center;
+
+    & .watermark {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -45px;
+      z-index: 0;
+      font-family: $font-decorative;
+      color: rgba(38, 34, 88, 0.03);
+      width: 100%;
+      font-size: calculate-rem(50px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 176px;
+      letter-spacing: 0em;
+      text-align: center;
+      white-space: nowrap;
+
+      @include respond(tab) {
+        font-style: normal;
+        font-weight: normal;
+        font-size: calculate-rem(100px);
+        line-height: 176px;
+        text-align: center;
+        left: -31px;
+        bottom: -15px;
+      }
+    }
+    & .watermark-foreground-header {
+      z-index: 1;
+      font-size: calculate-rem(20px);
+      font-style: normal;
+      font-weight: 800;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include respond(tab) {
+        font-size: calculate-rem(40px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 53px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+    & .hl {
+      z-index: 1;
+      @include hl($col-accent, 100px);
+    }
+  }
+
+  &__inner {
+    height: auto;
+    width: 100%;
+    margin-top: calculate-rem(80px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+
+    @include respond(tab) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 68px;
+      margin-top: calculate-rem(100px);
+    }
+
+    &-col {
+      &:nth-child(1) {
+        height: 100%;
+        width: 100%;
+
+        & .company-profile-header-wrap {
+          width: 100%;
+          @include column;
+          align-items: center;
+          @include respond(tab) {
+            align-items: flex-start;
+          }
+          & .watermark {
+            font-size: calculate-rem(20px);
+            font-style: normal;
+            font-weight: 800;
+            line-height: 27px;
+            letter-spacing: 0em;
+            text-align: center;
+            text-transform: uppercase;
+            color: $txt-heading;
+
+            @include respond(tab) {
+              font-size: calculate-rem(40px);
+              font-style: normal;
+              font-weight: 800;
+              line-height: 53px;
+              letter-spacing: 0em;
+              text-align: left;
+            }
+          }
+          & .hl {
+            @include hl($col-accent, 50px);
+            text-align: center;
+            @include respond(tab) {
+              text-align: left;
+            }
+          }
+        }
+
+        .company-background-wrap {
+          margin-top: calculate-rem(20px);
+          @include respond(tab) {
+            margin-top: calculate-rem(34px);
+          }
+
+          .company-background-text {
+            font-size: calculate-rem(12px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0em;
+            text-align: center;
+
+            @include respond(tab) {
+              font-size: 1.125rem;
+              line-height: 30px;
+              text-align: left;
+            }
+
+            &:not(:last-of-type) {
+              margin-bottom: 1.2rem;
+              @include respond(tab) {
+                margin-bottom: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        height: 250px;
+        width: 100%;
+        position: relative;
+        @include respond(tab) {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+// ABOUT US SECTION
+
+// ABOUT US SLIDER
+#slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 1s;
+  display: none;
+  height: 100%;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: $col-brand;
+  }
+}
+
+#dot {
+  width: 100%;
+  position: absolute;
+  bottom: 14px;
+  z-index: 10;
+  @include row;
+  justify-content: center;
+  gap: 0 10px;
+  text-align: center;
+  @include respond(tab) {
+    bottom: 25px;
+    gap: 0 15px;
+  }
+}
+.dot {
+  width: 30px;
+  height: 3px;
+  background: $col-white;
+  opacity: 0.5;
+  @include respond(tab) {
+    gap: 0 15px;
+    width: 30px;
+    height: 5px;
+  }
+}
+
+.active {
+  background: $col-white;
+  opacity: 1;
+}
+
+// ABOUT US SLIDER
+
+// WHY CHOOSE US
+.choose-us-section {
+  @include column;
+  width: 100%;
+  padding-left: calculate-rem(18px);
+  padding-right: calculate-rem(19px);
+  margin-bottom: calculate-rem(100px);
+  margin-top: calculate-rem(60px);
+  @include respond(tab) {
+    margin-top: calculate-rem(100px);
+    padding-left: calculate-rem(60px);
+    padding-right: calculate-rem(60px);
+    margin-bottom: calculate-rem(133px);
+  }
+  .choose-us-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 50px 0;
+    @include respond(tab) {
+      @include row;
+      gap: 0 86px;
+    }
+    .main-choose-slider {
+      flex: 1;
+      &__img {
+        height: 200px;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+        @include respond(tab) {
+          height: 420px;
+        }
+      }
+    }
+    .why-choose-main-content {
+      flex: 1;
+      & .watermark-header-wrap {
+        position: relative;
+        @include column;
+        align-items: center;
+
+        @include respond(tab) {
+          align-items: flex-start;
+        }
+
+        & .watermark {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -45px;
+          z-index: 0;
+          font-family: $font-decorative;
+          color: rgba(38, 34, 88, 0.03);
+          width: 100%;
+          font-size: calculate-rem(50px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 176px;
+          letter-spacing: 0em;
+          text-align: center;
+          white-space: nowrap;
+
+          @include respond(tab) {
+            font-style: normal;
+            font-weight: normal;
+            font-size: calculate-rem(100px);
+            line-height: 176px;
+            text-align: left;
+            left: -31px;
+            bottom: -15px;
+          }
+        }
+        & .watermark-foreground-header {
+          z-index: 1;
+          font-size: calculate-rem(20px);
+          font-style: normal;
+          font-weight: 800;
+          line-height: 27px;
+          letter-spacing: 0em;
+          text-align: center;
+          text-transform: uppercase;
+
+          @include respond(tab) {
+            font-size: calculate-rem(40px);
+            font-style: normal;
+            font-weight: 800;
+            line-height: 53px;
+            letter-spacing: 0em;
+            text-align: left;
+          }
+        }
+        & .hl {
+          z-index: 1;
+          border-top: 4px solid $col-accent;
+          width: 50px;
+          margin-top: 0;
+          margin-bottom: calculate-rem(17px);
+          @include respond(tab) {
+            margin-bottom: calculate-rem(20px);
+          }
+        }
+      }
+      .choose-us-text {
+        @include respond(tab) {
+          padding-right: calculate-rem(102px);
+        }
+      }
+    }
+  }
+
+  .cf {
+    zoom: 1;
+  }
+
+  .choose-us-thumbnail {
+    @include transition;
+    width: 100%;
+    @include row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0 35px;
+    margin-top: calculate-rem(40px);
+    @include respond(tab) {
+      @include flex-space-between;
+      gap: 0 3%;
+      margin-top: calculate-rem(50px);
+      padding: 0 10%;
+    }
+    &__img {
+      @include transition;
+      width: 96px;
+      min-width: 86px;
+      max-width: 90px;
+      height: auto;
+      cursor: pointer;
+      &:nth-child(2) {
+        margin-bottom: calculate-rem(-40px);
+        @include respond(tab) {
+          margin-bottom: calculate-rem(-90px);
+        }
+      }
+      @include respond(tab) {
+        width: 212px;
+        min-width: 177px;
+        max-width: 205px;
+        height: auto;
+      }
+
+      &.active {
+        transform: rotate(200deg);
+        -webkit-transform: rotate(200deg);
+        -moz-transform: rotate(200deg);
+        -ms-transform: rotate(200deg);
+        -o-transform: rotate(200deg);
+      }
+    }
+  }
+}
+// WHY CHOOSE US
+
+// PEOPLE INSPIRED
+.people-inspired-section {
+  width: 100%;
+  padding-left: calculate-rem(12px);
+  padding-right: calculate-rem(11px);
+  margin-bottom: calculate-rem(44px);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 55px 0;
+
+  @include respond(tab) {
+    margin-bottom: calculate-rem(191px);
+    padding-left: calculate-rem(60px);
+    padding-right: 0;
+    @include flex-space-between;
+    gap: 0 75px;
+  }
+  &__content {
+    flex: 1;
+    @include column;
+    align-items: center;
+    @include respond(tab) {
+      align-items: flex-start;
+    }
+    & .watermark-header-wrap {
+      position: relative;
+      @include column;
+      align-items: center;
+
+      @include respond(tab) {
+        align-items: flex-start;
+      }
+
+      & .watermark {
+        content: '';
+        position: absolute;
+        left: -20vw;
+        bottom: -45px;
+        z-index: 0;
+        font-family: $font-decorative;
+        color: rgba(38, 34, 88, 0.03);
+        width: 100%;
+        font-size: calculate-rem(50px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 176px;
+        letter-spacing: 0em;
+        text-align: center;
+        white-space: nowrap;
+
+        @include respond(tab) {
+          font-style: normal;
+          font-weight: normal;
+          font-size: calculate-rem(100px);
+          line-height: 176px;
+          text-align: left;
+          left: -31px;
+          bottom: -15px;
+        }
+      }
+      & .watermark-foreground-header {
+        z-index: 1;
+        font-size: calculate-rem(20px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include respond(tab) {
+          font-size: calculate-rem(40px);
+          font-style: normal;
+          font-weight: 800;
+          line-height: 53px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+      }
+      & .hl {
+        z-index: 1;
+        border-top: 4px solid $col-accent;
+        width: 50px;
+        margin-top: 0;
+        margin-bottom: calculate-rem(17px);
+        @include respond(tab) {
+          margin-bottom: calculate-rem(20px);
+        }
+      }
+    }
+
+    .counter-wrap {
+      margin-bottom: calculate-rem(30px);
+      background-color: $col-brand;
+      height: 70px;
+      width: 100%;
+      @include respond(tab) {
+        margin-top: calculate-rem(57px);
+        margin-bottom: calculate-rem(60px);
+      }
+
+      .counter-wrap__header {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $col-white;
+        @include respond(tab) {
+          font-size: 50px;
+          line-height: 66px;
+        }
+      }
+      .counter-wrap__text {
+        color: $col-white;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+
+        @include respond(tab) {
+          font-size: 1.125rem;
+          line-height: 30px;
+          text-align: left;
+        }
+      }
+    }
+
+    .people-inspired__text {
+      margin-bottom: calculate-rem(30px);
+      font-size: calculate-rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      @include respond(tab) {
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-top: calculate-rem(40px);
+    object-position: center;
+    object-fit: cover;
+    @include respond(tab) {
+      width: 50%;
+      margin-top: 0;
+    }
+  }
+}
+// PEOPLE INSPIRED
+
+
+
+
+
