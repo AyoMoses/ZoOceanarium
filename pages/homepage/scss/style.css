@@ -11,6 +11,24 @@
   }
 }
 
+@-webkit-keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 3000000;
+  }
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 3000000;
+  }
+}
+
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -1051,8 +1069,7 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-      grid-template-areas: 'logo-one logo-one logo-five logo-five logo-four logo-four'
- 'logo-two logo-two logo-two logo-three logo-three logo-three';
+      grid-template-areas: 'logo-one logo-one logo-five logo-five logo-four logo-four' 'logo-two logo-two logo-two logo-three logo-three logo-three';
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -1337,9 +1354,7 @@ h6 {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-      grid-template-areas: 'we-one we-one we-one we-one'
- 'we-two we-two we-three we-three'
- 'we-four we-four we-four we-four';
+      grid-template-areas: 'we-one we-one we-one we-one' 'we-two we-two we-three we-three' 'we-four we-four we-four we-four';
   gap: 10px;
   justify-items: end;
 }
@@ -1987,8 +2002,7 @@ h6 {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-      grid-template-areas: 'projone projone projtwo projtwo'
- 'projthree projthree projthree projthree';
+      grid-template-areas: 'projone projone projtwo projtwo' 'projthree projthree projthree projthree';
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -3164,20 +3178,23 @@ h6 {
 }
 
 .people-inspired-section__content .counter-wrap {
-  margin-bottom: 1.875rem;
+  margin-bottom: 0.9375rem;
   background-color: #262258;
   height: 70px;
   width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 @media only screen and (min-width: 56.25em) {
   .people-inspired-section__content .counter-wrap {
     margin-top: 3.5625rem;
-    margin-bottom: 3.75rem;
+    margin-bottom: 1.25rem;
   }
 }
 
-.people-inspired-section__content .counter-wrap .counter-wrap__header {
+.people-inspired-section__content .counter-wrap__header {
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
@@ -3188,13 +3205,13 @@ h6 {
 }
 
 @media only screen and (min-width: 56.25em) {
-  .people-inspired-section__content .counter-wrap .counter-wrap__header {
+  .people-inspired-section__content .counter-wrap__header {
     font-size: 50px;
     line-height: 66px;
   }
 }
 
-.people-inspired-section__content .counter-wrap .counter-wrap__text {
+.people-inspired-section__content .counter-wrap__text {
   color: #FFFFFF;
   font-size: 12px;
   font-style: normal;
@@ -3205,7 +3222,7 @@ h6 {
 }
 
 @media only screen and (min-width: 56.25em) {
-  .people-inspired-section__content .counter-wrap .counter-wrap__text {
+  .people-inspired-section__content .counter-wrap__text {
     font-size: 1.125rem;
     line-height: 30px;
     text-align: left;
@@ -3250,39 +3267,32 @@ h6 {
 }
 
 @property --num {
-  syntax: "<integer>";
+  syntax: '<integer>';
   initial-value: 0;
   inherits: false;
 }
 
 .counter_text {
+  animation: counter 5s infinite alternate ease-in-out;
+  counter-reset: num var(--num);
   -webkit-animation: counter 5s infinite alternate ease-in-out;
-          animation: counter 5s infinite alternate ease-in-out;
-  /* counter-reset: num var(--num); */
-  counter-increment: num var(--num);;
-  font: 800 40px system-ui;
-  padding: 2rem;
+  font-family: "Exo", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .counter_text {
+    font-size: 3.125rem;
+    line-height: 66px;
+  }
 }
 
 .counter_text::after {
   content: counter(num);
-}
-
-@-webkit-keyframes counter {
-  from {
-    --num: 0;
-  }
-  to {
-    --num: 100;
-  }
-}
-
-@keyframes counter {
-  from {
-    --num: 0;
-  }
-  to {
-    --num: 100;
-  }
 }
 /*# sourceMappingURL=style.css.map */

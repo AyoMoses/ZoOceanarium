@@ -11,6 +11,24 @@
   }
 }
 
+@-webkit-keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 3000000;
+  }
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 3000000;
+  }
+}
+
 html:focus-within {
   scroll-behavior: smooth;
 }
