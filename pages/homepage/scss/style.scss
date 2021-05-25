@@ -1587,6 +1587,7 @@
         letter-spacing: 0em;
         text-align: center;
         color: rgba($color: $col-white, $alpha: 0.7);
+        @include line-clamp(5);
         @include respond(tab) {
           font-size: 1.125rem;
           line-height: 30px;
@@ -1890,6 +1891,240 @@
 .owl-theme .owl-dots .owl-dot span {
   background: rgba($color: $col-brand, $alpha: 0.3) !important;
 }
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
   background: $col-primary-light !important;
+}
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: calculate-rem(39px);
+
+  @include respond(tab) {
+    padding-bottom: calculate-rem(73px);
+    height: 95vh;
+  }
+
+  & video {
+    background: $col-menu-bg;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  & .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.9);
+    filter: contrast(70%);
+    -webkit-filter: contrast(70%);
+    z-index: 1;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    @include column;
+    align-items: center;
+
+    & .watermark-header-wrap {
+      @include column;
+      align-items: center;
+      margin-top: calculate-rem(31px);
+      @include respond(tab) {
+        margin-top: calculate-rem(37px);
+      }
+
+      & .watermark-foreground-header {
+        font-size: calculate-rem(20px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: center;
+        text-transform: uppercase;
+        color: $col-white;
+
+        @include respond(tab) {
+          font-size: calculate-rem(40px);
+          line-height: 53px;
+        }
+      }
+      .watermark-foreground-subheader {
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: $col-white;
+        margin-top: calculate-rem(20px);
+        margin-bottom: calculate-rem(50px);
+        @include respond(tab) {
+          margin-bottom: calculate-rem(47px);
+          font-size: 1.125rem;
+          line-height: 24px;
+        }
+      }
+      & .hl {
+        @include hl($col-accent, 60px);
+      }
+    }
+
+    &-footer {
+      width: 100%;
+      margin-top: calculate-rem(60px);
+      @include column;
+      align-items: center;
+      gap: 50px 0;
+      @include respond(tab) {
+        padding-left: 17%;
+        padding-right: 17%;
+        margin-top: calculate-rem(152px);
+        @include flex-space-between;
+        gap: 0;
+      }
+
+      .contact-footer-col {
+        @include column;
+        align-items: center;
+        gap: 10.42px 0;
+
+        @include respond(tab) {
+          @include row;
+          gap: 0 20px;
+        }
+
+        .contact-footer-icon {
+          width: 12px;
+          height: 12px;
+          @include respond(tab) {
+            width: 20px;
+            height: 28.57px;
+          }
+        }
+
+        .contact-footer-text {
+          font-size: calculate-rem(14px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 21px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: $col-white;
+          @include respond(tab) {
+            font-size: calculate-rem(20px);
+            line-height: 26px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    width: 100%;
+    @include column;
+    align-items: center;
+    gap: 40px 0;
+    padding-left: calculate-rem(23px);
+    padding-right: calculate-rem(22px);
+    margin-bottom: calculate-rem(50px);
+    @include respond(tab) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        'form-one form-one form-two form-two'
+        'form-three form-three form-three form-three';
+      gap: 70px 100px;
+      padding-left: 19%;
+      padding-right: 19%;
+    }
+    &__input-wrap {
+      width: 100%;
+      @include transition;
+      @include column;
+      align-items: flex-start;
+
+      @include respond(tab) {
+        &:nth-child(1) {
+          grid-area: form-one;
+        }
+        &:nth-child(2) {
+          grid-area: form-two;
+        }
+        &:nth-child(3) {
+          grid-area: form-three;
+        }
+      }
+
+      & textarea {
+        height: 80px;
+        @include respond(tab) {
+          height: 191px;
+        }
+      }
+
+      &__label {
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $col-white;
+        text-transform: capitalize;
+        margin-bottom: calculate-rem(10px);
+        @include respond(tab) {
+          margin-bottom: calculate-rem(23px);
+          font-size: 1.125rem;
+          line-height: 24px;
+        }
+      }
+      &:focus-within {
+        .contact-form__input-wrap__label {
+          color: $col-primary-light;
+        }
+      }
+      &__form {
+        @include transition;
+        @include placeholder(rgba(255, 255, 255, 0.4));
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $col-white;
+        font-size: calculate-rem(14px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        background: transparent;
+        padding-bottom: calculate-rem(10px);
+        outline: none;
+        color: $col-white;
+        resize: none;
+
+        &:focus-within {
+          border-color: $col-primary-light;
+          caret-color: $col-primary-light;
+        }
+
+        @include respond(tab) {
+          padding-bottom: calculate-rem(14px);
+          font-size: calculate-rem(20px);
+          line-height: 26px;
+        }
+      }
+    }
+  }
 }
