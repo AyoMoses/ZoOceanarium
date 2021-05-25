@@ -23,8 +23,7 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.0/countUp.min.js"></script>
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Welcome - ZoOceanarium</title>
 
 </head>
@@ -585,21 +584,17 @@
                         </p>
                         <button class="button button--primary-border">Join us now</button>
                     </div>
-
-                    <img src="assets/bitmaps/people-inspired-img.png" alt="people inspired"
-                        class="people-inspired-section__image">
-                </div>
-
-            </section>
-            <!-- PEOPLE INSPIRED -->
-
-            <!-- LEADERSHIP -->
-            <section class="team-section">
-                <div class="watermark-header-wrap">
-                    <div class="hl"></div>
-                    <h2 class="watermark-foreground-header">LEADERSHIP TEAM</h2>
-                    <p class="watermark-foreground-subheader">
-                        Meet the brains behind the progress of ZoOceanarium Group.
+                    <div class="counter-wrap counter-block">
+                        <div class="row counter-items" id="unique-id">
+                            <!-- <div id="myTargetElement" class="item">
+                                <h2 class="counter counter-wrap__header" data-value="60000"></h2>
+                                <p class="counter-wrap__text">clients worldwide</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <p class="people-inspired__text">
+                        A part of our Mission statement is to inspire people to appreciate and care for animals in any
+                        way they can. This has turned out pretty well for us so far in our journey as an organization.
                     </p>
                 </div>
 
@@ -643,6 +638,15 @@
             </section>
             <!-- LEADERSHIP -->
         </div>
+
+
+      
+
+        <section>
+		
+            <h2 class="count">5518</h2>
+            <h2 class="count">10000</h2>
+		</section>
 
         <!-- FOOTER SECTION -->
         <footer class="footer-section" role="contentinfo">
@@ -736,7 +740,16 @@
     </div>
     <!-- FOOTER SECTION -->
 
-
+    <script src="./counterup.js"></script>
+    <script src="./jquery.waypoints.min.js"></script>
+    
+<!--    Counter up  -->
+     <script>
+      $('.count').countUp({
+            delay: 10,
+            time: 2500
+        });
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./pages/homepage/index.js"></script>
@@ -751,7 +764,11 @@
         };
         magicMouse(options);
     </script>
-    <!-- <script>
+    
+ 
+    
+    
+    <script>
         var options = {
             useEasing: true,
             useGrouping: true,
@@ -778,11 +795,14 @@
         ScrollReveal().reveal('.counter-block', {
             beforeReveal: countStart
         });
-    </script> -->
+    </script>
 
     <script>
         AOS.init();
     </script>
+
+    
+    
 </body>
 
 </html>
