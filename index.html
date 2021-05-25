@@ -18,9 +18,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic-mouse-1.1.css" />
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
     <script type="text/javascript"
         src="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic_mouse-1.1.js"></script>
-   
+
 
     <script src="./jquery.min.js"></script>
     <title>Welcome - ZoOceanarium</title>
@@ -650,6 +652,113 @@
             </section>
             <!-- LEADERSHIP -->
 
+            <!-- NEW BLOG -->
+            <section class="news-blog-section">
+                <div class="watermark-header-wrap">
+                    <h2 class="watermark">In the news</h2>
+                    <div class="hl"></div>
+                    <h2 class="watermark-foreground-header">IN THE NEWS</h2>
+                </div>
+                <div class="owl-carousel owl-theme">
+                    <div class="news-card">
+                        <div class="news-image-wrap">
+                            <img src="assets/bitmaps/demo-blog/demo-blog-01.png" alt="news" class="news-card__image">
+                            <div class="news-category-wrap">
+                                <p class="news-category business">Business</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card-content-wrap">
+                            <p class="news-card__title">This is a business-related post.</p>
+                            <p class="news-card__content">
+                                This is a business-related post, consectetur adipiscing elit. In nec purus et est
+                                aliquam consequat habitant. Aenean interdum pretium mi arcu eget faucibus ut in id.
+                            </p>
+                            <span class="news-card__date">
+                                April 12, 2021
+                            </span>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrap">
+                            <img src="assets/bitmaps/demo-blog/demo-blog-02.png" alt="news" class="news-card__image">
+                            <div class="news-category-wrap">
+                                <p class="news-category event">event</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card-content-wrap">
+                            <p class="news-card__title">This is a business-related post.</p>
+                            <p class="news-card__content">
+                                This is a business-related post, consectetur adipiscing elit. In nec purus et est
+                                aliquam consequat habitant. Aenean interdum pretium mi arcu eget faucibus ut in id.
+                            </p>
+                            <span class="news-card__date">
+                                April 12, 2021
+                            </span>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrap">
+                            <img src="assets/bitmaps/demo-blog/demo-blog-03.png" alt="news" class="news-card__image">
+                            <div class="news-category-wrap">
+                                <p class="news-category review">event</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card-content-wrap">
+                            <p class="news-card__title">This is a business-related post.</p>
+                            <p class="news-card__content">
+                                This is a business-related post, consectetur adipiscing elit. In nec purus et est
+                                aliquam consequat habitant. Aenean interdum pretium mi arcu eget faucibus ut in id.
+                            </p>
+                            <span class="news-card__date">
+                                April 12, 2021
+                            </span>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrap">
+                            <img src="assets/bitmaps/demo-blog/demo-blog-01.png" alt="news" class="news-card__image">
+                            <div class="news-category-wrap">
+                                <p class="news-category event">event</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card-content-wrap">
+                            <p class="news-card__title">This is a business-related post.</p>
+                            <p class="news-card__content">
+                                This is a business-related post, consectetur adipiscing elit. In nec purus et est
+                                aliquam consequat habitant. Aenean interdum pretium mi arcu eget faucibus ut in id.
+                            </p>
+                            <span class="news-card__date">
+                                April 12, 2021
+                            </span>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrap">
+                            <img src="assets/bitmaps/demo-blog/demo-blog-02.png" alt="news" class="news-card__image">
+                            <div class="news-category-wrap">
+                                <p class="news-category review">event</p>
+                            </div>
+                        </div>
+
+                        <div class="news-card-content-wrap">
+                            <p class="news-card__title">This is a business-related post.</p>
+                            <p class="news-card__content">
+                                This is a business-related post, consectetur adipiscing elit. In nec purus et est
+                                aliquam consequat habitant. Aenean interdum pretium mi arcu eget faucibus ut in id.
+                            </p>
+                            <span class="news-card__date">
+                                April 12, 2021
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- NEW BLOG -->
+
         </div>
 
         <!-- FOOTER SECTION -->
@@ -757,6 +866,9 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./pages/homepage/index.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
     <script>
         var options = {
             useEasing: true,
@@ -799,8 +911,41 @@
 
 
 
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                nav: false,
+                animateOut: 'fadeOut',
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        loop: true,
+                        margin: 30,
+                    },
+                    600: {
+                        items: 2,
+                        nav: false,
+                        loop: true,
+                        margin: 30,
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false,
+                        loop: true,
+                        margin: 60,
+                    }
+                }
+            });
+        });
 
-    
+
+    </script>
+
 
     <script>
         AOS.init();
