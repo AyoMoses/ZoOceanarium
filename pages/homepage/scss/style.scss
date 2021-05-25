@@ -1459,47 +1459,6 @@
         margin-top: calculate-rem(50px);
       }
 
-      // .counter-wrap {
-      //   margin-bottom: calculate-rem(15px);
-      //   background-color: $col-brand;
-      //   height: 70px;
-      //   width: 100%;
-      //   display: grid;
-      //   place-items: center;
-      //   @include respond(tab) {
-      //     margin-top: calculate-rem(57px);
-      //     margin-bottom: calculate-rem(20px);
-      //   }
-      // }
-      // .counter-wrap__header {
-      //   font-size: 30px;
-      //   font-style: normal;
-      //   font-weight: 400;
-      //   line-height: 40px;
-      //   letter-spacing: 0em;
-      //   text-align: left;
-      //   color: $col-white;
-      //   @include respond(tab) {
-      //     font-size: 50px;
-      //     line-height: 66px;
-      //   }
-      // }
-      // .counter-wrap__text {
-      //   color: $col-white;
-      //   font-size: 12px;
-      //   font-style: normal;
-      //   font-weight: 400;
-      //   line-height: 22px;
-      //   letter-spacing: 0em;
-      //   text-align: center;
-
-      //   @include respond(tab) {
-      //     font-size: 1.125rem;
-      //     line-height: 30px;
-      //     text-align: left;
-      //   }
-      // }
-
       .people-inspired__text {
         margin-bottom: calculate-rem(30px);
         font-size: calculate-rem(12px);
@@ -1665,3 +1624,41 @@
   }
 }
 // LEADERSHIP
+
+.counter-wrap {
+  @include row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0 7px;
+  margin-bottom: calculate-rem(15px);
+  width: 100%;
+  @include respond(tab) {
+    justify-content: flex-start;
+    gap: 0 14px;
+    margin-bottom: calculate-rem(20px);
+  }
+
+  .counter__text {
+    width: 30px;
+    height: 50px;
+    @include border-radius(3px);
+    color: $col-white;
+
+    font-family: $font-exo;
+    font-size: calculate-rem(20px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    border: none;
+    background: $col-brand;
+
+    @include respond(tab) {
+      width: 60px;
+      height: 80px;
+      font-size: calculate-rem(40px);
+      line-height: 66px;
+    }
+  }
+}

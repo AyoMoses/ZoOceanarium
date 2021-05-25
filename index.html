@@ -29,11 +29,6 @@
 </head>
 
 <body>
-    <section>
-
-        <h2 class="count">5518</h2>
-       
-    </section>
     <div class="page-wrapper">
         <div class="page-wrapper__content">
             <header class="app-nav-wrapper">
@@ -578,9 +573,17 @@
                 </div>
                 <div class="people-inspired-section__inner">
                     <div class="people-inspired-section__content">
-                        <!-- <div class="counter-wrap">
-                            <div class="counter_text"></div>
-                        </div> -->
+                        <div class="counter-wrap">
+                            <button class="count counter__text">3</button>
+                            <h3 class="count-space">,</h3>
+                            <button class="count counter__text">03</button>
+                            <button class="count counter__text">02</button>
+                            <button class="count counter__text">05</button>
+                            <h3 class="count-space">,</h3>
+                            <button class="count counter__text">07</button>
+                            <button class="count counter__text">17</button>
+                            <button class="count counter__text">05</button>
+                        </div>
                         <p class="people-inspired__text">
                             A part of our Mission statement is to inspire people to appreciate and care for
                             animals in
@@ -649,15 +652,6 @@
             <!-- LEADERSHIP -->
 
         </div>
-
-
-
-
-        <section>
-
-            <h2 class="count">5518</h2>
-            <!-- <h2 class="count">10000</h2> -->
-        </section>
 
         <!-- FOOTER SECTION -->
         <footer class="footer-section" role="contentinfo">
@@ -757,28 +751,13 @@
     <!--    Counter up  -->
     <script>
         $('.count').countUp({
-            delay: 5,
-            time: 2500
+            delay: 10,
+            time: 30000
         });
     </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./pages/homepage/index.js"></script>
-    <script type="text/javascript">
-        options = {
-            "cursorOuter": "circle-basic",
-            "hoverEffect": "circle-move",
-            "hoverItemMove": false,
-            "defaultCursor": true,
-            "outerWidth": 41,
-            "outerHeight": 41
-        };
-        magicMouse(options);
-    </script>
-
-
-
-
     <script>
         var options = {
             useEasing: true,
@@ -807,6 +786,22 @@
             beforeReveal: countStart
         });
     </script>
+    <script type="text/javascript">
+        options = {
+            "cursorOuter": "circle-basic",
+            "hoverEffect": "circle-move",
+            "hoverItemMove": false,
+            "defaultCursor": true,
+            "outerWidth": 41,
+            "outerHeight": 41
+        };
+        magicMouse(options);
+    </script>
+
+
+
+
+    
 
     <script>
         AOS.init();
