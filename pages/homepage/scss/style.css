@@ -2807,7 +2807,6 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 0 86px;
   }
 }
 
@@ -2836,6 +2835,12 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .choose-us-section .choose-us-col .why-choose-main-content {
+    margin-left: 5.375rem;
+  }
 }
 
 .choose-us-section .choose-us-col .why-choose-main-content .watermark-header-wrap {
@@ -3452,8 +3457,13 @@ h6 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    gap: 0 14px;
     margin-bottom: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 56.25em) {
+  .counter-wrap .count-space {
+    margin-right: 0.4375rem;
   }
 }
 
@@ -3483,6 +3493,9 @@ h6 {
     height: 80px;
     font-size: 2.5rem;
     line-height: 66px;
+  }
+  .counter-wrap .counter__text:not(:last-child) {
+    margin-right: 0.875rem;
   }
 }
 
