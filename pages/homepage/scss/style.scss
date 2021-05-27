@@ -316,8 +316,10 @@
     background: $col-primary url('/assets/icons/global-bg.svg');
     background-repeat: no-repeat;
     background-position: top right;
-    @include flex-space-between;
-    gap: 0 20%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: space-between;
+    gap: 0 10%;
   }
 
   & .globe-wrap {
@@ -506,7 +508,8 @@
     padding-top: 40px;
 
     @include respond(tab) {
-      @include flex-space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 0 72px;
     }
 
@@ -687,7 +690,7 @@
     margin-top: calculate-rem(30px);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 0 calculate-rem(10px);
     grid-template-areas:
       'projone projone projtwo projtwo'
       'projthree projthree projthree projthree';
@@ -712,6 +715,10 @@
         grid-area: projtwo;
       }
 
+      &:not(:last-child) {
+        margin-right: calculate-rem(10px);
+      }
+
       &:hover .thumbnail-text-overlay,
       &:focus .thumbnail-text-overlay {
         display: block;
@@ -720,6 +727,9 @@
       }
 
       @include respond(tab) {
+        &:not(:last-child) {
+          margin-right: calculate-rem(40px);
+        }
         height: 290px;
         width: 340px;
       }
@@ -1299,8 +1309,18 @@
         }
       }
       .choose-us-text {
+        font-size: calculate-rem(12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+
         @include respond(tab) {
           padding-right: calculate-rem(102px);
+          font-size: 1.125rem;
+          line-height: 30px;
+          text-align: left;
         }
       }
     }
@@ -1901,6 +1921,7 @@
   width: 100%;
   height: 100vh;
   padding-bottom: calculate-rem(39px);
+  margin-top: 9rem;
 
   @include respond(tab) {
     padding-bottom: calculate-rem(73px);
@@ -1998,19 +2019,23 @@
       .contact-footer-col {
         @include column;
         align-items: center;
-        gap: 10.42px 0;
 
         @include respond(tab) {
           @include row;
-          gap: 0 20px;
         }
 
         .contact-footer-icon {
           width: 12px;
           height: 12px;
+          // &:not(:last-child) {
+          //   margin-bottom: calculate-rem(10.42px);
+          // }
           @include respond(tab) {
             width: 20px;
             height: 28.57px;
+            &:not(:last-child) {
+              margin-right: calculate-rem(20px);
+            }
           }
         }
 

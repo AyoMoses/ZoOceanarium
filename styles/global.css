@@ -391,7 +391,6 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 37px 0;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -403,7 +402,17 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 0 60px;
+  }
+}
+
+.app-nav-wrapper .top-nav__inner .middle-nav__item:not(:last-child) {
+  margin-bottom: 2.3125rem;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .app-nav-wrapper .top-nav__inner .middle-nav__item:not(:last-child) {
+    margin-right: 3.75rem;
+    margin-bottom: 0;
   }
 }
 
@@ -658,7 +667,6 @@ h6 {
 }
 
 .hero-content__mini-header {
-  font-family: "Pacifico", cursive;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
@@ -815,7 +823,13 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 54px 80px;
+  }
+}
+
+@media only screen and (min-width: 56.25em) {
+  .footer-section__top-link-wrap .footer-section__top-link-item:not(:last-child) {
+    margin-bottom: 3.5625rem;
+    margin-right: 5rem;
   }
 }
 

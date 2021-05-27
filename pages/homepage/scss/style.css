@@ -391,7 +391,6 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 37px 0;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -403,7 +402,17 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 0 60px;
+  }
+}
+
+.app-nav-wrapper .top-nav__inner .middle-nav__item:not(:last-child) {
+  margin-bottom: 2.3125rem;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .app-nav-wrapper .top-nav__inner .middle-nav__item:not(:last-child) {
+    margin-right: 3.75rem;
+    margin-bottom: 0;
   }
 }
 
@@ -658,7 +667,6 @@ h6 {
 }
 
 .hero-content__mini-header {
-  font-family: "Pacifico", cursive;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
@@ -815,7 +823,13 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 54px 80px;
+  }
+}
+
+@media only screen and (min-width: 56.25em) {
+  .footer-section__top-link-wrap .footer-section__top-link-item:not(:last-child) {
+    margin-bottom: 3.5625rem;
+    margin-right: 5rem;
   }
 }
 
@@ -1450,20 +1464,14 @@ h6 {
     background: #1970B3 url("/assets/icons/global-bg.svg");
     background-repeat: no-repeat;
     background-position: top right;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 0 20%;
+    gap: 0 10%;
   }
 }
 
@@ -1721,19 +1729,10 @@ h6 {
 
 @media only screen and (min-width: 56.25em) {
   .projects-section__project-slide-inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     gap: 0 72px;
   }
 }
@@ -1983,7 +1982,7 @@ h6 {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 0 0.625rem;
       grid-template-areas: 'projone projone projtwo projtwo' 'projthree projthree projthree projthree';
 }
 
@@ -2038,6 +2037,10 @@ h6 {
   grid-area: projtwo;
 }
 
+.projects-section .thumbnails-img-wrap .thumbnail:not(:last-child) {
+  margin-right: 0.625rem;
+}
+
 .projects-section .thumbnails-img-wrap .thumbnail:hover .thumbnail-text-overlay,
 .projects-section .thumbnails-img-wrap .thumbnail:focus .thumbnail-text-overlay {
   display: block;
@@ -2053,6 +2056,9 @@ h6 {
   .projects-section .thumbnails-img-wrap .thumbnail {
     height: 290px;
     width: 340px;
+  }
+  .projects-section .thumbnails-img-wrap .thumbnail:not(:last-child) {
+    margin-right: 2.5rem;
   }
 }
 
@@ -2915,9 +2921,21 @@ h6 {
   }
 }
 
+.choose-us-section .choose-us-col .why-choose-main-content .choose-us-text {
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
 @media only screen and (min-width: 56.25em) {
   .choose-us-section .choose-us-col .why-choose-main-content .choose-us-text {
     padding-right: 6.375rem;
+    font-size: 1.125rem;
+    line-height: 30px;
+    text-align: left;
   }
 }
 
@@ -3790,6 +3808,7 @@ h6 {
   width: 100%;
   height: 100vh;
   padding-bottom: 2.4375rem;
+  margin-top: 9rem;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -3961,7 +3980,6 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10.42px 0;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -3973,7 +3991,6 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 0 20px;
   }
 }
 
@@ -3986,6 +4003,9 @@ h6 {
   .contact-section__content-footer .contact-footer-col .contact-footer-icon {
     width: 20px;
     height: 28.57px;
+  }
+  .contact-section__content-footer .contact-footer-col .contact-footer-icon:not(:last-child) {
+    margin-right: 1.25rem;
   }
 }
 

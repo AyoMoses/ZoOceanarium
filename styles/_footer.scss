@@ -37,10 +37,18 @@
 
         @include respond(tab) {
           @include row;
-          gap: 54px 80px;
+          // gap: 54px 80px;
         }
       }
       .footer-section__top-link-item {
+        &:not(:last-child) {
+          
+          @include respond(tab) {
+            margin-bottom: calculate-rem(57px);
+            margin-right: calculate-rem(80px);
+            // gap: 54px 80px;
+          }
+        }
         &:last-child {
           margin-bottom: 37px;
         }

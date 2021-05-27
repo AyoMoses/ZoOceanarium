@@ -1,4 +1,3 @@
-
 .app-nav-wrapper {
   position: relative;
   height: 100vh;
@@ -25,10 +24,20 @@
     .middle-nav {
       @include column;
       align-items: center;
-      gap: 37px 0;
       @include respond(tab) {
         @include row;
-        gap: 0 60px;
+      }
+
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: calculate-rem(37px);
+        }
+        @include respond(tab) {
+          &:not(:last-child) {
+            margin-right: calculate-rem(60px);
+            margin-bottom: 0;
+          }
+        }
       }
 
       .middle-nav__link {
@@ -228,7 +237,6 @@
   }
 
   &__mini-header {
-    font-family: $font-decorative;
     font-size: calculate-rem(12px);
     font-style: normal;
     font-weight: 400;
