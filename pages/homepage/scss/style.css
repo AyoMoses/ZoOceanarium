@@ -1708,7 +1708,6 @@ h6 {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-    gap: 0 72px;
   }
 }
 
@@ -1743,6 +1742,12 @@ h6 {
 
 .projects-section__project-slide-inner .gp-watermark:after {
   content: url("/assets/icons/green-planet-watermark.svg");
+}
+
+@media only screen and (min-width: 56.25em) {
+  .projects-section__project-slide-inner .gp-watermark {
+    margin-left: 72px;
+  }
 }
 
 .projects-section__project-slide-inner .fg-watermark:after {

@@ -497,7 +497,6 @@
     @include respond(tab) {
       display: flex;
       flex-direction: row-reverse;
-      gap: 0 72px;
     }
   }
 
@@ -518,9 +517,13 @@
         content: url('/assets/icons/st-louis-aquarium-watermark.svg');
       }
     }
+
     .gp-watermark {
       &:after {
         content: url('/assets/icons/green-planet-watermark.svg');
+      }
+      @include respond(tab) {
+        margin-left: 72px;
       }
     }
     .fg-watermark {
