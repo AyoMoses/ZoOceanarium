@@ -3331,7 +3331,6 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 50px;
   }
 }
 
@@ -3341,7 +3340,11 @@ h6 {
 
 @media only screen and (min-width: 56.25em) {
   .team-section__inner .team-card {
-    width: 30%;
+    width: 29%;
+  }
+  .team-section__inner .team-card:not(:last-child) {
+    margin-right: 3.125rem;
+    margin-bottom: 3.125rem;
   }
 }
 

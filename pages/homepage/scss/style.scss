@@ -1579,13 +1579,16 @@
 
     @include respond(tab) {
       @include row;
-      gap: 50px;
     }
 
     .team-card {
       width: 44%;
       @include respond(tab) {
-        width: 30%;
+        width: 29%;
+        &:not(:last-child) {
+          margin-right: calculate-rem(50px);
+          margin-bottom: calculate-rem(50px);
+        }
       }
       &__image {
         object-fit: cover;
