@@ -53,24 +53,52 @@ function changeimg(url, e) {
 
 
 // SCROLL TO VIEW
-var downBtn = document.querySelector('.scroll-down-btn');
-var aboutBtn = document.querySelector('.to-abt-btn');
-var workExpBtn = document.querySelector('.work-btn');
-var contactBtn = document.querySelector('.contact-btn');
+var projectsBtn = document.querySelector('.projects-btn');
+var contactBtn = document.querySelector('.mobile-contact-cta');
+var teamBtn = document.querySelector('.team-btn');
+var aboutBtn = document.querySelector('.about-btn');
+var serviceBtn = document.querySelector('.services-btn');
+var workWithUsBtn = document.querySelector('.work-with-us');
 
-var aboutEl = document.querySelector('.about-section');
-var workEl = document.querySelector('.work-section');
+var projectEl = document.querySelector('.projects');
 var contactEl = document.querySelector('.contact-section');
+var teamEl = document.querySelector('.team-section');
+var aboutEl = document.querySelector('.about-us-section');
+var serviceEl = document.querySelector('.services-section');
+var workWithUsEl = document.querySelector('.people-inspired-section');
 
-downBtn.addEventListener('click', function () {
-  aboutEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-});
-aboutBtn.addEventListener('click', function () {
-  aboutEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-});
-workExpBtn.addEventListener('click', function () {
-  workEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+projectsBtn.addEventListener('click', function () {
+  showcase.style.display = "none";
+  menuToggle.classList.toggle('active');
+  projectEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  console.log("this is me working")
 });
 contactBtn.addEventListener('click', function () {
+  showcase.style.display = "none";
   contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  console.log("this is me working")
+});
+teamBtn.addEventListener('click', function () {
+  showcase.style.display = "none";
+  menuToggle.classList.toggle('active');
+  teamEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  console.log("this is me working")
+});
+aboutBtn.addEventListener('click', function () {
+  showcase.style.display = "none";
+  menuToggle.classList.toggle('active');
+  aboutEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  console.log("this is me working")
+});
+serviceBtn.addEventListener('click', function () {
+  showcase.style.display = "none";
+  menuToggle.classList.toggle('active');
+  serviceEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  console.log("this is me working")
+});
+workWithUsBtn.addEventListener('click', function () {
+  showcase.style.display = "none";
+  menuToggle.classList.toggle('active');
+  workWithUsEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  console.log("this is me working")
 });
