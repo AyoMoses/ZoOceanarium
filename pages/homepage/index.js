@@ -6,6 +6,15 @@ menuToggle.addEventListener('click', () => {
   showcase.classList.toggle('active');
 })
 
+window.addEventListener("wheel",(e)=>{
+  console.log( "Y Axis");
+  console.log(e.y, "Y Axis");
+
+  const nav = document.querySelector('#web-nav');
+  if(e.y <= 10) nav.className = ''; else nav.className = 'scroll';
+  console.log('it works scroll i mean')
+
+})
 window.onscroll = () => {
   const nav = document.querySelector('#web-nav');
   if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
