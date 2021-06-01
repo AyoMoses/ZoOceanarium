@@ -65,40 +65,31 @@ var contactEl = document.querySelector('.contact-section');
 var teamEl = document.querySelector('.team-section');
 var aboutEl = document.querySelector('.about-us-section');
 var serviceEl = document.querySelector('.services-section');
-var workWithUsEl = document.querySelector('.people-inspired-section');
+var workWithUsEl = document.querySelector('.team-section__footer');
 
 projectsBtn.addEventListener('click', function () {
-  showcase.style.display = "none";
-  menuToggle.classList.toggle('active');
+  // showcase.style.display = "none";
+  // menuToggle.classList.toggle('active');
   projectEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   console.log("this is me working")
 });
 contactBtn.addEventListener('click', function () {
-  showcase.style.display = "none";
   contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   console.log("this is me working")
 });
 teamBtn.addEventListener('click', function () {
-  showcase.style.display = "none";
-  menuToggle.classList.toggle('active');
   teamEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   console.log("this is me working")
 });
 aboutBtn.addEventListener('click', function () {
-  showcase.style.display = "none";
-  menuToggle.classList.toggle('active');
   aboutEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   console.log("this is me working")
 });
 serviceBtn.addEventListener('click', function () {
-  showcase.style.display = "none";
-  menuToggle.classList.toggle('active');
   serviceEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   console.log("this is me working")
 });
 workWithUsBtn.addEventListener('click', function () {
-  showcase.style.display = "none";
-  menuToggle.classList.toggle('active');
-  workWithUsEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  workWithUsEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
   console.log("this is me working")
 });
