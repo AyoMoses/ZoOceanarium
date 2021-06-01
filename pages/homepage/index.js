@@ -6,6 +6,12 @@ menuToggle.addEventListener('click', () => {
   showcase.classList.toggle('active');
 })
 
+window.onscroll = () => {
+  const nav = document.querySelector('#web-nav');
+  if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
+  console.log('it works scroll i mean')
+};
+
 // ABOUT US SLIDER
 var index = 0;
 var slides = document.querySelectorAll(".slides");
@@ -54,11 +60,21 @@ function changeimg(url, e) {
 
 // SCROLL TO VIEW
 var projectsBtn = document.querySelector('.projects-btn');
-var contactBtn = document.querySelector('.mobile-contact-cta');
+var mobileProjectsBtn = document.querySelector('.mobile-projects-btn');
+var mobileContactBtn = document.querySelector('.mobile-contact-cta');
+var contactBtn = document.querySelector('.contact-nav-cta');
+var heroContactBtn = document.querySelector('.hero-cta');
+var serviceContactBtn = document.querySelector('.service-cta');
+var globalContactBtn = document.querySelector('.globe-cta');
 var teamBtn = document.querySelector('.team-btn');
+var mobileTeamBtn = document.querySelector('.mobile-team-btn');
 var aboutBtn = document.querySelector('.about-btn');
+var mobileAboutBtn = document.querySelector('.mobile-about-btn');
+var whoWeAreAboutBtn = document.querySelector('.who-we-are-cta');
 var serviceBtn = document.querySelector('.services-btn');
+var mobileServiceBtn = document.querySelector('.mobile-services-btn');
 var workWithUsBtn = document.querySelector('.work-with-us');
+var mobileWorkWithUsBtn = document.querySelector('.mobile-work-with-us');
 
 var projectEl = document.querySelector('.projects');
 var contactEl = document.querySelector('.contact-section');
@@ -68,28 +84,62 @@ var serviceEl = document.querySelector('.services-section');
 var workWithUsEl = document.querySelector('.team-section__footer');
 
 projectsBtn.addEventListener('click', function () {
-  // showcase.style.display = "none";
-  // menuToggle.classList.toggle('active');
   projectEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  console.log("this is me working")
+});
+mobileProjectsBtn.addEventListener('click', function () {
+  showcase.classList.remove('active');
+  menuToggle.classList.remove('active');
+  projectEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 });
 contactBtn.addEventListener('click', function () {
   contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  console.log("this is me working")
+});
+mobileContactBtn.addEventListener('click', function () {
+  showcase.classList.remove('active');
+  menuToggle.classList.remove('active');
+  contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+});
+heroContactBtn.addEventListener('click', function () {
+  contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+});
+serviceContactBtn.addEventListener('click', function () {
+  contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+});
+mobileServiceBtn.addEventListener('click', function () {
+  showcase.classList.remove('active');
+  menuToggle.classList.remove('active');
+  contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+});
+globalContactBtn.addEventListener('click', function () {
+  contactEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 });
 teamBtn.addEventListener('click', function () {
   teamEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  console.log("this is me working")
+});
+mobileTeamBtn.addEventListener('click', function () {
+  showcase.classList.remove('active');
+  menuToggle.classList.remove('active');
+  teamEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 });
 aboutBtn.addEventListener('click', function () {
   aboutEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  console.log("this is me working")
+});
+mobileAboutBtn.addEventListener('click', function () {
+  showcase.classList.remove('active');
+  menuToggle.classList.remove('active');
+  aboutEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+});
+whoWeAreAboutBtn.addEventListener('click', function () {
+  aboutEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 });
 serviceBtn.addEventListener('click', function () {
   serviceEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  console.log("this is me working")
 });
 workWithUsBtn.addEventListener('click', function () {
   workWithUsEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-  console.log("this is me working")
+});
+mobileWorkWithUsBtn.addEventListener('click', function () {
+  showcase.classList.remove('active');
+  menuToggle.classList.remove('active');
+  workWithUsEl.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
 });

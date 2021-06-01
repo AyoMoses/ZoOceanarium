@@ -134,16 +134,39 @@
 .nav {
   display: none;
 
+  // @include respond(tab) {
+  //   display: block;
+  //   width: 100%;
+  //   position: absolute;
+  //   z-index: 10;
+  // }
+}
+.web-nav {
+  display: none;
   @include respond(tab) {
-    display: block;
+    display: flex;
     width: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 10;
+    top: 0;
+    @include transition;
+    // .toggle {
+    //   display: none;
+    // }
+    // .toggle.active {
+    //   display: none;
+    // }
   }
+  
 }
 
 .active {
   display: block;
+  z-index: 9999;
+}
+
+.scroll {
+  background: red;
 }
 
 // position .toggle on far right
