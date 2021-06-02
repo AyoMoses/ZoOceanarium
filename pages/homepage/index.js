@@ -48,7 +48,7 @@ changeSlide();
 
 // ABOUT US SLIDER
 
-// ABOUT US SECTION THUMBNAIL SLIDER
+// WHY CHOOSE US US SECTION THUMBNAIL SLIDER
 function changeimg(url, e) {
   document.getElementById("img").src = url;
   let nodes = document.getElementById("thumb_img");
