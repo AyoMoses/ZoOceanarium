@@ -6,14 +6,14 @@ menuToggle.addEventListener('click', () => {
   showcase.classList.toggle('active');
 })
 
-window.addEventListener("wheel", (e) => {
-  const nav = document.querySelector('#web-nav');
-  if (e.y <= 10) nav.className = 'web-nav'; else nav.className = 'scroll';
-  console.log('it works scroll i mean')
-  console.log("Y Axis");
-  console.log(e.y, "Y Axis");
+// window.addEventListener("wheel", (e) => {
+//   const nav = document.querySelector('#web-nav');
+//   if (window.scrollY <= 10) nav.className = 'web-nav'; else nav.className = 'scroll';
+//   console.log('it works scroll i mean')
+//   console.log("Y Axis");
+//   console.log(e.deltaY, "Y Axis");
 
-})
+// })
 // document.addEventListener('scroll', function (e){
 //     console.log("hello");
 // })
