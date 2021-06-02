@@ -15,9 +15,13 @@ window.addEventListener("wheel",(e)=>{
   console.log('it works scroll i mean')
 
 })
+// document.addEventListener('scroll', function (e){
+//     console.log("hello");
+// })
+
 window.onscroll = () => {
-  const nav = document.querySelector('#web-nav');
-  if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
+  // const nav = document.querySelector('#web-nav');
+  // if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
   console.log('it works scroll i mean')
 };
 
