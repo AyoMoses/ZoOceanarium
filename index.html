@@ -941,26 +941,6 @@
 
     <script src="./counterup.js"></script>
     <!-- <script src="./jquery.waypoints.min.js"></script> -->
-  
-    <!--    Counter up  -->
-    <script>
-        // $('.count').countUp({
-        //     delay: 10,
-        //     time: 30000
-        // });
-
- 
-// count up options
-var options = {
-  useEasing: true,
-  useGrouping: true,
-  separator: ',',
-  decimal: '.',
-};
-
-
-var countUp = new countUp("3000", 0, 3000, 0, 4, options);
-    </script>
 
     
 
@@ -986,7 +966,7 @@ var countUp = new countUp("3000", 0, 3000, 0, 4, options);
                 var item = document.getElementById(children[i].id).querySelector('.counter');
                 var countValue = item.getAttribute('data-value');
 
-                var countUP = new CountUp(item, 0, countValue, 0, 2, options);
+                var countUP = new countUp(item, 0, countValue, 0, 2, options);
                 if (!countUP.error) {
                     countUP.start();
                 }
