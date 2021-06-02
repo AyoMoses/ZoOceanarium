@@ -556,25 +556,28 @@ h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    top: 0;
     transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -ms-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
+    position: static;
+    width: 100%;
+    background: transparent !important;
   }
+}
+
+.scroll {
+  background: red;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
 }
 
 .active {
   display: block;
   z-index: 9999;
-}
-
-.scroll {
-  background: red;
 }
 
 .toggle.active {

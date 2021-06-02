@@ -145,11 +145,10 @@
   display: none;
   @include respond(tab) {
     display: flex;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    top: 0;
     @include transition;
+    position: static;
+    width: 100%;
+    background: transparent !important;
     // .toggle {
     //   display: none;
     // }
@@ -157,16 +156,18 @@
     //   display: none;
     // }
   }
-  
+}
+.scroll {
+  background: red;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
 }
 
 .active {
   display: block;
   z-index: 9999;
-}
-
-.scroll {
-  background: red;
 }
 
 // position .toggle on far right
