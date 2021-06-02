@@ -948,6 +948,26 @@
             delay: 10,
             time: 30000
         });
+
+        var statValues = [];
+// get stat values
+$('.stats .stat').each(function() {
+  var value = $(this).find('.stat__amount span').text();
+  $(this).find('.stat__amount span').attr('id', value);
+  statValues.push(value);
+});
+// count up options
+var options = {
+  useEasing: true,
+  useGrouping: true,
+  separator: ',',
+  decimal: '.',
+};
+// declare count ups
+var countUps = [];
+for (i = 0; i < statValues.length; i++) {
+  countUps[i] = new countUp(statValues[i].toString(), 0, eval(statValues[i]), 0, 4, options);
+}
     </script>
 
     
