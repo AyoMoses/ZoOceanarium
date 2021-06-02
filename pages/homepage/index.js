@@ -6,23 +6,14 @@ menuToggle.addEventListener('click', () => {
   showcase.classList.toggle('active');
 })
 
-// window.addEventListener("wheel", (e) => {
-//   const nav = document.querySelector('#web-nav');
-//   if (window.scrollY <= 10) nav.className = 'web-nav'; else nav.className = 'scroll';
-//   console.log('it works scroll i mean')
-//   console.log("Y Axis");
-//   console.log(e.deltaY, "Y Axis");
-
-// })
-// document.addEventListener('scroll', function (e){
-//     console.log("hello");
-// })
-
-window.onscroll = () => {
-  // const nav = document.querySelector('#web-nav');
-  // if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
-  console.log('it works scroll i mean')
-};
+$(document).on("scroll", function () {
+  if ($(window).scrollTop() > 50) {
+    $(".web-nav").addClass("scroll");
+  } else {
+    //remove the background property so it comes transparent again (defined in your css)
+    $(".web-nav").removeClass("scroll");
+  }
+});
 
 // ABOUT US SLIDER
 var index = 0;
@@ -71,6 +62,7 @@ function changeimg(url, e) {
 
 
 // SCROLL TO VIEW
+var WebLogoBtn = document.querySelector('.web-logo-btn');
 var projectsBtn = document.querySelector('.projects-btn');
 var mobileProjectsBtn = document.querySelector('.mobile-projects-btn');
 var mobileContactBtn = document.querySelector('.mobile-contact-cta');
@@ -88,6 +80,7 @@ var mobileServiceBtn = document.querySelector('.mobile-services-btn');
 var workWithUsBtn = document.querySelector('.work-with-us');
 var mobileWorkWithUsBtn = document.querySelector('.mobile-work-with-us');
 
+var heroEl = document.querySelector('.app-nav-wrapper');
 var projectEl = document.querySelector('.projects');
 var contactEl = document.querySelector('.contact-section');
 var teamEl = document.querySelector('.team-section');
@@ -95,6 +88,9 @@ var aboutEl = document.querySelector('.about-us-section');
 var serviceEl = document.querySelector('.services-section');
 var workWithUsEl = document.querySelector('.team-section__footer');
 
+WebLogoBtn.addEventListener('click', function () {
+  heroEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+});
 projectsBtn.addEventListener('click', function () {
   projectEl.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 });

@@ -14,7 +14,6 @@
     z-index: 400;
     @include respond(tab) {
       background-color: transparent;
-      padding: 26px 30px 0 30px;
       position: static;
       top: 0;
       @include flex-space-between;
@@ -148,21 +147,31 @@
     @include transition;
     position: static;
     width: 100%;
-    background: transparent !important;
-    // .toggle {
-    //   display: none;
-    // }
-    // .toggle.active {
-    //   display: none;
-    // }
+    background: transparent;
+    padding: 26px 30px 0 30px;
   }
 }
-.scroll {
-  background: red;
+[class].scroll {
+  padding: 10px 30px 10px 30px;
+  background: linear-gradient(180deg, #1970b3 0%, #003157 100%);
+  box-shadow: 0px 4px 10px rgba(0, 90, 130, 0.3);
   width: 100%;
   position: fixed;
   z-index: 10;
   top: 0;
+
+  & .web-logo {
+    width: 90px;
+    height: auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & .contact-nav-cta {
+    width: 150px;
+    height: 50px;
+  }
 }
 
 .active {
@@ -205,6 +214,9 @@
     display: block;
     width: 115px;
     height: 72px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 .mobile-logo {

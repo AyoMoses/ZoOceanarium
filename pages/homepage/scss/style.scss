@@ -718,9 +718,9 @@
         grid-area: projtwo;
       }
 
-      &:not(:last-child) {
-        margin-right: calculate-rem(10px);
-      }
+      // &:not(:last-child) {
+      //   margin-right: calculate-rem(10px);
+      // }
 
       &:hover .thumbnail-text-overlay,
       &:focus .thumbnail-text-overlay {
