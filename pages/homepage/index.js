@@ -6,14 +6,38 @@ menuToggle.addEventListener('click', () => {
   showcase.classList.toggle('active');
 })
 
+var  status = true;
+var modal = document.getElementById("myModal");
+
 $(document).on("scroll", function () {
+ 
+  
+
   if ($(window).scrollTop() > 50) {
     $(".web-nav").addClass("scroll");
   } else {
     //remove the background property so it comes transparent again (defined in your css)
     $(".web-nav").removeClass("scroll");
   }
+ console.log($(window).scrollTop() );
+  if($(window).scrollTop() >= 300 && status){
+    modal.style.display = "block";
+     status = false;
+  }
 });
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 // ABOUT US SLIDER
 var index = 0;
