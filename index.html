@@ -27,7 +27,11 @@
     <script src="./jquery.min.js"></script>
     <!-- <script src="./jquery-3.6.0.min.js"></script> -->
     <title>Welcome - ZoOceanarium</title>
+    <script type="text/javascript" charset="utf-8" src="globe_30fps_edgePreload.js"></script>
+
+
     <style>
+         .edgeLoad-EDGE-10260560 { visibility:hidden; }
         /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -272,8 +276,10 @@
             <!-- GLOBAL PRESENCE -->
             <section class="global-section">
                 <div class="globe-wrap">
-                    <img src="assets/icons/earth-globe-blue.svg" alt="globe" class="globe-wrap__image web-globe">
-                    <img src="assets/icons/globe-mobile.svg" alt="globe" class="globe-wrap__image img-mobile">
+                    <!-- <img src="assets/icons/earth-globe-blue.svg" alt="globe" class="globe-wrap__image web-globe">
+                    <img src="assets/icons/globe-mobile.svg" alt="globe" class="globe-wrap__image img-mobile"> -->
+                    <div id="Stage" class="EDGE-10260560">
+                    </div>
                 </div>
 
                 <div class="global-section__content">
@@ -678,6 +684,8 @@
 
             <!-- LEADERSHIP -->
             <section class="team-section">
+                
+
                 <div class="watermark-header-wrap">
                     <div class="hl"></div>
                     <h2 class="watermark-foreground-header">LEADERSHIP TEAM</h2>
