@@ -31,52 +31,65 @@
 
 
     <style>
-         .edgeLoad-EDGE-10260560 { visibility:hidden; }
+        .edgeLoad-EDGE-10260560 {
+            visibility: hidden;
+        }
+
         /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
-   
+
 
 </head>
 
 <body>
-    
-   
+
+
     <div class="page-wrapper">
         <div class="page-wrapper__content">
             <header class="app-nav-wrapper">
@@ -278,8 +291,9 @@
                 <div class="globe-wrap">
                     <!-- <img src="assets/icons/earth-globe-blue.svg" alt="globe" class="globe-wrap__image web-globe">
                     <img src="assets/icons/globe-mobile.svg" alt="globe" class="globe-wrap__image img-mobile"> -->
-                    <div id="Stage" class="EDGE-10260560">
-                    </div>
+                    <!-- <div id="Stage" class="EDGE-10260560">
+                    </div> -->
+                    <div id="bm"></div>
                 </div>
 
                 <div class="global-section__content">
@@ -684,7 +698,7 @@
 
             <!-- LEADERSHIP -->
             <section class="team-section">
-                
+
 
                 <div class="watermark-header-wrap">
                     <div class="hl"></div>
@@ -983,29 +997,31 @@
             </div>
         </footer>
 
-        
-<!-- The Modal -->
-<div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
-    </div>
-  
-  </div>
-  
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+
     </div>
     <!-- FOOTER SECTION -->
 
     <script src="./counterup.js"></script>
     <!-- <script src="./jquery.waypoints.min.js"></script> -->
 
-    
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+    <script src="spinning_globe07_earth_trans_grid.json"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./pages/homepage/index.js"></script>
-  
+
     <script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 
     <script>
@@ -1090,7 +1106,7 @@
         AOS.init();
     </script>
 
-   
+
 
 
 </body>

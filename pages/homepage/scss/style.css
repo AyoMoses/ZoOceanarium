@@ -1521,7 +1521,7 @@ h6 {
 @media only screen and (min-width: 56.25em) {
   .global-section {
     padding: 67px 124px 71.73px 60px;
-    background: #1970B3 url("/assets/icons/global-bg.svg");
+    background: #1972b6 url("/assets/icons/global-bg.svg");
     background-repeat: no-repeat;
     background-position: top right;
     display: -ms-grid;
@@ -1535,24 +1535,13 @@ h6 {
   }
 }
 
-.global-section .globe-wrap .web-globe {
-  display: none;
+.global-section .globe-wrap {
+  height: 500px;
 }
 
-@media only screen and (min-width: 56.25em) {
-  .global-section .globe-wrap .web-globe {
-    display: block;
-  }
-}
-
-.global-section .globe-wrap .img-mobile {
-  display: block;
-}
-
-@media only screen and (min-width: 56.25em) {
-  .global-section .globe-wrap .img-mobile {
-    display: none;
-  }
+.global-section .globe-wrap #bm {
+  width: 100%;
+  height: 100%;
 }
 
 .global-section .global-section__content {

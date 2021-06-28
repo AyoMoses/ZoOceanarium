@@ -20,10 +20,10 @@ $(document).on("scroll", function () {
     $(".web-nav").removeClass("scroll");
   }
  console.log($(window).scrollTop() );
-  if($(window).scrollTop() >= 300 && status){
-    modal.style.display = "block";
-     status = false;
-  }
+  // if($(window).scrollTop() >= 300 && status){
+  //   modal.style.display = "block";
+  //    status = false;
+  // }
 });
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -38,6 +38,14 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+var animation = bodymovin.loadAnimation({
+  container: document.getElementById('bm'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'spinning_globe07_earth_trans_grid.json'
+})
 
 // ABOUT US SLIDER
 var index = 0;
