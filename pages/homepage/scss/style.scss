@@ -1,6 +1,7 @@
 @import '../../../styles/global.scss';
 
 .member {
+  position: relative;
   &__header-wrap {
     width: 100%;
     @include column;
@@ -1201,6 +1202,7 @@
     gap: 50px 0;
     @include respond(tab) {
       @include row;
+      align-items: center;
     }
     .main-choose-slider {
       flex: 1;
@@ -2138,4 +2140,12 @@
       }
     }
   }
+}
+
+.lottie-bg {
+  width: 100%;
+  display: grid;
+  place-items: end;
+  position: absolute;
+  z-index: -1;
 }
