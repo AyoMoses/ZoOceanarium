@@ -43,6 +43,7 @@ body {
   max-width: 100%;
   overflow-x: visible;
   @include transition;
+  cursor: none;
 }
 
 body {

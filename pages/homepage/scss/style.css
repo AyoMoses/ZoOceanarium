@@ -83,6 +83,7 @@ body {
   -moz-transition: all 0.3s linear;
   -ms-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
+  cursor: none;
 }
 
 body {
@@ -484,6 +485,7 @@ h6 {
   letter-spacing: 0em;
   text-align: center;
   text-shadow: 0.5px 0.5px #262258;
+  cursor: pointer;
 }
 
 .app-nav-wrapper .top-nav__inner .middle-nav .middle-nav__link:hover, .app-nav-wrapper .top-nav__inner .middle-nav .middle-nav__link:active {
@@ -644,7 +646,7 @@ h6 {
 
 .active {
   display: block;
-  z-index: 9999;
+  z-index: 500;
 }
 
 .toggle.active {
@@ -4308,5 +4310,46 @@ h6 {
   place-items: end;
   position: absolute;
   z-index: -1;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #0d578f;
+  z-index: 1000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #d1971b;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  opacity: 0.8;
+  z-index: 1000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 /*# sourceMappingURL=style.css.map */

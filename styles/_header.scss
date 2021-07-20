@@ -49,6 +49,7 @@
         letter-spacing: 0em;
         text-align: center;
         text-shadow: 0.5px 0.5px $txt-heading;
+        cursor: pointer;
 
         &:hover,
         &:active {
@@ -176,7 +177,7 @@
 
 .active {
   display: block;
-  z-index: 9999;
+  z-index: 500;
 }
 
 // position .toggle on far right

@@ -83,6 +83,7 @@ body {
   -moz-transition: all 0.3s linear;
   -ms-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
+  cursor: none;
 }
 
 body {
@@ -484,6 +485,7 @@ h6 {
   letter-spacing: 0em;
   text-align: center;
   text-shadow: 0.5px 0.5px #262258;
+  cursor: pointer;
 }
 
 .app-nav-wrapper .top-nav__inner .middle-nav .middle-nav__link:hover, .app-nav-wrapper .top-nav__inner .middle-nav .middle-nav__link:active {
@@ -644,7 +646,7 @@ h6 {
 
 .active {
   display: block;
-  z-index: 9999;
+  z-index: 500;
 }
 
 .toggle.active {

@@ -6,12 +6,12 @@ menuToggle.addEventListener('click', () => {
   showcase.classList.toggle('active');
 })
 
-var  status = true;
+var status = true;
 var modal = document.getElementById("myModal");
 
 $(document).on("scroll", function () {
- 
-  
+
+
 
   if ($(window).scrollTop() > 50) {
     $(".web-nav").addClass("scroll");
@@ -19,7 +19,7 @@ $(document).on("scroll", function () {
     //remove the background property so it comes transparent again (defined in your css)
     $(".web-nav").removeClass("scroll");
   }
- console.log($(window).scrollTop() );
+  console.log($(window).scrollTop());
   // if($(window).scrollTop() >= 300 && status){
   //   modal.style.display = "block";
   //    status = false;
@@ -28,12 +28,12 @@ $(document).on("scroll", function () {
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
@@ -92,6 +92,16 @@ function changeimg(url, e) {
   console.log('it works');
 }
 
+gsap.set('.follower', {xPercent:-50,yPercent:-50});
+gsap.set('.cursor', {xPercent:-50,yPercent:-50});
+
+var follow = document.querySelector('.follower');
+var cur = document.querySelector('.cursor');
+
+window.addEventListener('mousemove', e => {
+  gsap.to(cur,0.2,{x:e.clientX,y:e.clientY});
+  gsap.to(follow,0.9,{x:e.clientX,y:e.clientY});
+})
 
 // SCROLL TO VIEW
 var WebLogoBtn = document.querySelector('.web-logo-btn');
